@@ -6,7 +6,8 @@ class CreateActivities < ActiveRecord::Migration[6.0]
       t.datetime :final_date
       t.string :location
       t.text :description
-      t.string :coordinates
+      t.float :latitude
+      t.float :longitude
       t.references :user, null: false, foreign_key: true
 
       t.timestamps
