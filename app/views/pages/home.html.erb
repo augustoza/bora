@@ -8,40 +8,29 @@
     <% end %>
     </div>
   <br>
-  <div class="row">
-    <div class="col-12">
-      <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/random/700x700/?travel);">
-        <div class="container">
-          <h1>Encontre companhia para sua próxima aventura</h1>
-          <p>bora...</p>
-          <%= link_to "Sign in", new_user_session_path %>
-        </div>
-      </div>
-    </div>
+  
+    <%= render "shared/banner" %>
 
 <div class="container">
-
-  <div class="col-sm-12 col-md-6 col-lg-3 category">
-    <div>
-      <%= link_to "Ao ar livre", activities_path(:category => "Ao ar livre") %>  
+  <div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-3 category">
+      <div>
+        <%= link_to "Ao ar livre", activities_path(:category => "Ao ar livre") %>  
+      </div>
+      <div>
+        <%= link_to "Natureza", activities_path(:category => "Natureza") %>  
+      </div>
+      <div>
+        <%= link_to "Cultural", activities_path(:category => "Cultural") %>
+      </div>
+      <div>
+        <%= link_to "Vida noturna", activities_path(:category => "Vida noturna") %>
+      </div>
+      <div>
+        <%= link_to "Gastronomia", activities_path(:category => "Gastronomia") %>  
+      </div>
     </div>
-    <div>
-      <%= link_to "Natureza", activities_path(:category => "Natureza") %>  
-    </div>
-    <div>
-       <%= link_to "Cultural", activities_path(:category => "Cultural") %>
-    </div>
-    <div>
-       <%= link_to "Vida noturna", activities_path(:category => "Vida noturna") %>
-    </div>
-    <div>
-      <%= link_to "Gastronomia", activities_path(:category => "Gastronomia") %>  
-    </div>
-    
-  </div>
-    
-
   </div>
 </div>
     
-    <%= render "shared/footer" %>
+  <%= render "shared/footer" %>
