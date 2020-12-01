@@ -1,2 +1,13 @@
-<h1>Profiles#show</h1>
-<p>Find me in app/views/profiles/show.html.erb</p>
+<div class="container">
+  <h1><%=@user.username%></h1>
+
+    <div class='User show'>
+      Name: <%= @user.full_name %>
+      Gender: <%= @user.genre %>
+      Country: <%= @user.country %>
+      Location: <%= @user.location %>
+      About: <%= @user.about %>
+    </div>
+
+</div>
+
