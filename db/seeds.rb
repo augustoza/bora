@@ -1,7 +1,34 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'date'
+
+#TODO------------------------------------
+#TODO -----------> USERS <---------------
+#TODO------------------------------------
+
+User.create!(password: '123abc', full_name: 'Diego C', username: 'Diego', country: 'Brazil', genre: 'male', email: 'diego@teste.com')
+
+User.create!(password: '123abc', full_name: 'Augusto AZ', username: 'Augustoza', country: 'Germany', genre: 'male', email: 'augusto@teste.com')
+
+User.create!(password: '123abc', full_name: 'Beatriz Caram', username: 'Bia', country: 'Mexico', genre: 'female', email: 'biacaram@teste.com')
+
+User.create!(password: '123abc', full_name: 'Thiago', username: 'Thiagoav', country: 'Uruguay', genre: 'male', email: 'thiagoav@teste.com')
+
+User.create!(password: '123abc', full_name: 'Roberto', username: 'Bebeto', country: 'Japan', genre: 'male', email: 'bebeto@teste.com')
+
+User.create!(password: '123abc', full_name: 'Laranjeira', username: 'Laranjeira', country: 'China', genre: 'female', email: 'laranja@teste.com')
+
+User.create!(password: '123123', full_name: 'Joleno', username: 'joleno', country: 'Brazil', genre: 'male', email: 'joleno@teste.com')
+
+#TODO------------------------------------
+#TODO---------> ACTIVITIES <-------------
+#TODO------------------------------------
+
+finaldate = (DateTime.now +99)
+
+Activity.create!(user_id: 1, title: 'Explorar Buenos Aires', initial_date: DateTime.now, final_date: finaldate, location: 'Buenos Aires')
+
+Activity.create!(user_id: 2, title: 'Explorar o Louvre', initial_date: DateTime.now, final_date: finaldate, location: 'Paris')
+
+Activity.create!(user_id: 3, title: 'Grab a drink', initial_date: DateTime.now, final_date: finaldate, location: 'London')
+
+Activity.create!(user_id: 4, title: 'Explore the area', initial_date: DateTime.now, final_date: finaldate, location: 'Tokyo')
+
