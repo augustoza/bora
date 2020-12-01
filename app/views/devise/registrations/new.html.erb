@@ -21,6 +21,10 @@
                   prompt: 'Gender',
                   label: false,
                   collection: User::GENRES %>
+      <%= f.input :country, 
+                  prompt: 'Country',
+                  label: false,
+                  collection: User::COUNTRIES %>
       <%= f.input :password,
                   required: true,
                   placeholder: 'Password',
@@ -39,7 +43,10 @@
     </div>
   <% end %>
 
-<%# ADICIONAR UM BOTAO DE BACK %>
+<h3>
+ Adicionar um botao de back
+</h3>
+
 
   <%= render "devise/shared/links" %>
 </div>
