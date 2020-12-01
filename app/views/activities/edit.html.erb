@@ -5,9 +5,9 @@
   <div class="edit-activity">
     <%= simple_form_for @activity do |f| %>
       <%= f.input :title, placeholder:'Title', label: false %>
-      <%= f.input :initial_date, placeholder:'Initial Date', label: false %>
-      <%= f.input :final_date, placeholder:'Final Date', label: false %>
-      <%=f.input :location, placeholder:'Location', label: false %>
+      <%= f.input :initial_date, placeholder:'Initial Date', label: false%>
+      <%= f.input :final_date, placeholder:'Final Date', label: false%>
+      <%=f.input :location, placeholder:'Location', label: false%>
       <%= f.submit 'Save changes', class: 'btn btn-warning' %>
     <% end %>
   </div>
