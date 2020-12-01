@@ -1,6 +1,8 @@
 require 'date'
 
-#TODO USERS
+#TODO------------------------------------
+#TODO -----------> USERS <---------------
+#TODO------------------------------------
 
 User.create!(password: '123abc', full_name: 'Diego C', username: 'Diego', country: 'Brazil', genre: 'male', email: 'diego@teste.com')
 
@@ -14,6 +16,16 @@ User.create!(password: '123abc', full_name: 'Roberto', username: 'Bebeto', count
 
 User.create!(password: '123abc', full_name: 'Laranjeira', username: 'Laranjeira', country: 'China', genre: 'female', email: 'laranja@teste.com')
 
+#TODO------------------------------------
+#TODO---------> MAIN USER <-------------
+#TODO------------------------------------
+
+User.create!(password: '123123', full_name: 'Joleno', username: 'joleno', country: 'Brazil', genre: 'male', email: 'joleno@teste.com')
+
+#TODO------------------------------------
+#TODO---------> ACTIVITIES <-------------
+#TODO------------------------------------
+
 finaldate = (DateTime.now +99)
 
 Activity.create!(user_id: 1, title: 'Explorar Buenos Aires', initial_date: DateTime.now, final_date: finaldate, location: 'Buenos Aires')
@@ -23,3 +35,4 @@ Activity.create!(user_id: 2, title: 'Explorar o Louvre', initial_date: DateTime.
 Activity.create!(user_id: 3, title: 'Grab a drink', initial_date: DateTime.now, final_date: finaldate, location: 'London')
 
 Activity.create!(user_id: 4, title: 'Explore the area', initial_date: DateTime.now, final_date: finaldate, location: 'Tokyo')
+
