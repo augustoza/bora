@@ -17,6 +17,10 @@
                   placeholder: 'Username',
                   label: false,
                   input_html: { autocomplete: "username" }%>
+      <%= f.input :genre, 
+                  prompt: 'Gender',
+                  label: false,
+                  collection: User::GENRES %>
       <%= f.input :password,
                   required: true,
                   placeholder: 'Password',
