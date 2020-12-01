@@ -16,10 +16,6 @@ User.create!(password: '123abc', full_name: 'Roberto', username: 'Bebeto', count
 
 User.create!(password: '123abc', full_name: 'Laranjeira', username: 'Laranjeira', country: 'China', genre: 'female', email: 'laranja@teste.com')
 
-#TODO------------------------------------
-#TODO---------> MAIN USER <-------------
-#TODO------------------------------------
-
 User.create!(password: '123123', full_name: 'Joleno', username: 'joleno', country: 'Brazil', genre: 'male', email: 'joleno@teste.com')
 
 #TODO------------------------------------
