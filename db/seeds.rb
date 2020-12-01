@@ -1,6 +1,6 @@
 require 'date'
 
-#TODO USERS
+#TODO -----------> USERS <---------------
 
 User.create!(password: '123abc', full_name: 'Diego C', username: 'Diego', country: 'Brazil', genre: 'male', email: 'diego@teste.com')
 
@@ -13,6 +13,8 @@ User.create!(password: '123abc', full_name: 'Thiago', username: 'Thiagoav', coun
 User.create!(password: '123abc', full_name: 'Roberto', username: 'Bebeto', country: 'Japan', genre: 'male', email: 'bebeto@teste.com')
 
 User.create!(password: '123abc', full_name: 'Laranjeira', username: 'Laranjeira', country: 'China', genre: 'female', email: 'laranja@teste.com')
+
+#TODO---------> ACTIVITIES <-------------
 
 finaldate = (DateTime.now +99)
 
