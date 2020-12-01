@@ -4,17 +4,10 @@
 <div class="container">
   <div class="edit-profile">
     <%= simple_form_for @user, url: profiles_path, method: :post do |f| %>
-<<<<<<< HEAD
       <%= f.input :full_name, placeholder:'FullName', label: false %>
       <%= f.input :country,placeholder:'Country',label: false %>
       <%= f.input :genre, prompt: 'Gender', label: false,collection: User::GENRES %>
       <%=f.input :username, placeholder:'Username',label: false %>
-=======
-      <%= f.input :full_name, placeholder:'FullName', label: false, %>
-      <%= f.input :country,placeholder:'Country',label: false, %>
-      <%= f.input :genre, prompt: 'Gender', label: false,collection: User::GENRES %>
-      <%=f.input :username, placeholder:'Username',label: false, %>
->>>>>>> 81a5855c1e67ccee78cade05ffe893076917db9c
       <%= f.submit 'Save changes', class: 'btn btn-warning' %>
     <% end %>
   </div>
