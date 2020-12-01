@@ -17,6 +17,12 @@ User.create!(password: '123abc', full_name: 'Roberto', username: 'Bebeto', count
 User.create!(password: '123abc', full_name: 'Laranjeira', username: 'Laranjeira', country: 'China', genre: 'female', email: 'laranja@teste.com')
 
 #TODO------------------------------------
+#TODO---------> MAIN USER <-------------
+#TODO------------------------------------
+
+User.create!(password: '123123', full_name: 'Joleno', username: 'joleno', country: 'Brazil', genre: 'male', email: 'joleno@teste.com')
+
+#TODO------------------------------------
 #TODO---------> ACTIVITIES <-------------
 #TODO------------------------------------
 
@@ -29,3 +35,4 @@ Activity.create!(user_id: 2, title: 'Explorar o Louvre', initial_date: DateTime.
 Activity.create!(user_id: 3, title: 'Grab a drink', initial_date: DateTime.now, final_date: finaldate, location: 'London')
 
 Activity.create!(user_id: 4, title: 'Explore the area', initial_date: DateTime.now, final_date: finaldate, location: 'Tokyo')
+
