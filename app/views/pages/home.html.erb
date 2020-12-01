@@ -2,7 +2,7 @@
     <div class="field">
       <%= form_tag activities_path, method: :get do %>
       <%= text_field_tag :query, params[:query], class: "form-control",
-          placeholder: "Where to go?"%>
+          placeholder: "Type a city"%>
     </div>
       <%= submit_tag "Search", class: "btn btn-outline-light ml-1 my-sm-0" %>
     <% end %>
@@ -14,7 +14,7 @@
         <div class="container">
           <h1>Encontre companhia para sua próxima aventura</h1>
           <p>bora...</p>
-          <a class="btn btn-flat" href="#">Sign in</a>
+          <%= link_to "Sign in", new_user_session_path %>
         </div>
       </div>
     </div>
@@ -23,16 +23,19 @@
 
   <div class="col-sm-12 col-md-6 col-lg-3 category">
     <div>
-      <%= link_to "Ao ar livre", activities_path %>  
+      <%= link_to "Ao ar livre", activities_path(:category => "Ao ar livre") %>  
     </div>
     <div>
-      <%= link_to "Natureza", activities_path %>  
+      <%= link_to "Natureza", activities_path(:category => "Natureza") %>  
     </div>
     <div>
-       <%= link_to "Culturais", activities_path %>
+       <%= link_to "Cultural", activities_path(:category => "Cultural") %>
     </div>
     <div>
-       <%= link_to "Vida noturna", activities_path %>
+       <%= link_to "Vida noturna", activities_path(:category => "Vida noturna") %>
+    </div>
+    <div>
+      <%= link_to "Gastronomia", activities_path(:category => "Gastronomia") %>  
     </div>
     
   </div>
