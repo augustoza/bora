@@ -5,10 +5,10 @@
   div class="container">
   <div class="edit-activitie">
     <%= simple_form_for @activitie, url: activities_path, method: :post do |f| %>
-      <%= f.input :title %>
-      <%= f.input :initial_date %>
-      <%= f.input :final_date %>
-      <%=f.input :location %>
+      <%= f.input :title, placeholder:'Title', label: false, %>
+      <%= f.input :initial_date, placeholder:'Initial Date', label: false,%>
+      <%= f.input :final_date, placeholder:'Final Date', label: false,%>
+      <%=f.input :location, placeholder:'Location', label: false,%>
       <%= f.submit 'Save changes', class: 'btn btn-warning' %>
     <% end %>
   </div>
