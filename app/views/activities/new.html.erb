@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-      <h3>Não encontrou a atividade que você quer fazer? Adicione aqui ;) </h3>
+      <h3>Não encontrou a atividade que você quer fazer? </h3>
     <div class="col-sm-12 col-lg-8">
 
       <div class='form-content'>
@@ -10,13 +10,18 @@
       <br>
       <br>
         <div class="form-inputs fields">
-          <%= f.input :title %>
-          <%= f.input :description %>
-          <%= f.input :location %>
+          <%= f.input :title, :label => "Título" %>
+          <%= f.input :category, as: :radio_buttons, collection: ['Ao ar livre',
+           'Natureza', 'Aventura', 'Cultural', 'Festas', 'Bares', 'Shows', 'Gastronomia',
+            'Compras', 'Transporte', 'Esportes'], wrapper: :vertical_collection_inline, :label => "Categoria" %>
+          <%= f.input :location, :label => "Local" %>
+          <%= f.input :description, :label => "Descrição" %>
+          <%= f.input :initial_date, :label => "Data inicial" %>
+          <%= f.input :final_date, :label => "Data final" %>
         </div>
         
         <div class="form-actions btn btn-success">
-          <%= f.button :submit, class: 'btn-text' %>
+          <%= f.button :submit, "Adicionar" %>
         </div>
         
         </div>
@@ -25,3 +30,5 @@
     </div>
   </div>
 </div>
+
+  <%= render "shared/footer" %>
