@@ -11,6 +11,12 @@
                   placeholder: 'Email',
                   label: false,
                   input_html: { autocomplete: "email" }%>
+      <%= f.input :full_name,
+                  required: true,
+                  autofocus: true,
+                  placeholder: 'Full name',
+                  label: false,
+                  input_html: { autocomplete: "username" }%>
       <%= f.input :username,
                   required: true,
                   autofocus: true,
