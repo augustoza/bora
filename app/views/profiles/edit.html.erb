@@ -1,2 +1,14 @@
 <h1>Profiles#edit</h1>
 <p>Find me in app/views/profiles/edit.html.erb</p>
+
+<div class="container">
+  <div class="edit-profile">
+    <%= simple_form_for @user, url: profiles_path, method: :post do |f| %>
+      <%= f.input :full_name %>
+      <%= f.input :country %>
+      <%= f.input :gender%>
+      <%=f.input :username %>
+      <%= f.submit 'Save changes', class: 'btn btn-warning' %>
+    <% end %>
+  </div>
+</div>

@@ -1,2 +1,15 @@
 <h1>Activities#edit</h1>
 <p>Find me in app/views/activities/edit.html.erb</p>
+
+<%= simple_form_for(@activitie) do |f| %>
+  div class="container">
+  <div class="edit-activitie">
+    <%= simple_form_for @activitie, url: activities_path, method: :post do |f| %>
+      <%= f.input :full_name %>
+      <%= f.input :country %>
+      <%= f.input :gender%>
+      <%=f.input :username %>
+      <%= f.submit 'Save changes', class: 'btn btn-warning' %>
+    <% end %>
+  </div>
+</div>
