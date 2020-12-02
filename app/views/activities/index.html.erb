@@ -1,26 +1,27 @@
+<div class="container">
 
+  <h1>List of activities:</h1>
 
-<h1>List of activities:</h1>
-
-<div class="activities-wrapper">
-  <% @activities.each do |activity| %>
-    <%= link_to activity_path(activity), class: 'activities-card', :action => 'go' do %>
-      <div class="activity-card">
-        <%= activity.title %>
-        <%= activity.location %> <%# Não coloquei description no index. Achei melhor deixar somente para o show. O que acham? %>
-        <%= activity.initial_date %>
-        <%= activity.final_date %>
-        <% activity.latitude %><% activity.longitude %>
-        <%= activity.user.username %>
-      </div>
+  <div class="activities-wrapper">
+    <% @activities.each do |activity| %>
+      <%= link_to activity_path(activity), class: 'activities-card', :action => 'go' do %>
+        <div class="activity-card">
+          <%= activity.title %>
+          <%= activity.location %> <%# Não coloquei description no index. Achei melhor deixar somente para o show. O que acham? %>
+          <%= activity.initial_date %>
+          <%= activity.final_date %>
+          <% activity.latitude %><% activity.longitude %>
+          <%= activity.user.username %>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
-</div>
-
- <div>
-    <div id="map"
-      style="width: 100%; height: 600px;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
 
+  <div>
+      <div id="map"
+        style="width: 100%; height: 600px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    </div>
+
+</div>
