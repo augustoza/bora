@@ -1,4 +1,7 @@
 class Activity < ApplicationRecord
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
+
   belongs_to :user
   validates :title, presence: true
   validates :initial_date, presence: true
