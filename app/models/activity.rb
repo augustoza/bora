@@ -5,6 +5,6 @@ class Activity < ApplicationRecord
   validates :initial_date, presence: true
   validates :final_date, presence: true
   validates :location, presence: true
-  CATEGORIES = ['Ao ar livre', 'Natureza', 'Aventura', 'Cultural', 'Festas', 'Bares', 'Shows', 'Gastronomia', 'Compras', 'Transporte', 'Esportes']
+  CATEGORIES = ['Ao ar livre', 'Natureza', 'Aventura', 'Cultural', 'Festas', 'Bares', 'Shows', 'Gastronomia', 'Compras', 'Transporte', 'Esportes', 'Outros']
   validates :category, presence: true, inclusion: { in: CATEGORIES }
 end
