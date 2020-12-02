@@ -34,8 +34,10 @@ Chatroom.create!(activity_id: activity_2.id)
 activity_3 = Activity.create!(category: CATEGORIES.sample, user_id: 3, title: 'Grab a drink', initial_date: DateTime.now, final_date: finaldate, location: 'London')
 Chatroom.create!(activity_id: activity_3.id)
 
-
-Activity.create!(category: 'Ao ar livre', user_id: 6, title: 'Explorar a Paulista', initial_date: DateTime.now, final_date: finaldate, location: 'Avenida Paulista, 1000, São Paulo')
-
 activity_4 = Activity.create!(category: CATEGORIES.sample, user_id: 4, title: 'Explore the area', initial_date: DateTime.now, final_date: finaldate, location: 'Tokyo')
 Chatroom.create!(activity_id: activity_4.id)
+
+activity_5 = Activity.create!(category: 'Ao ar livre', user_id: 6, title: 'Explorar a Paulista', initial_date: DateTime.now, final_date: finaldate, location: 'Avenida Paulista, 1000, São Paulo')
+Chatroom.create!(activity_id: activity_5.id)
+
+# test

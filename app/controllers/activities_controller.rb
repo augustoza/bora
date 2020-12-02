@@ -10,7 +10,8 @@ class ActivitiesController < ApplicationController
         lng: activity.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { activity: activity })
       }
-
+    end
+    
     if params[:category]
       @activities = Activity.where(category: params[:category])
     else
