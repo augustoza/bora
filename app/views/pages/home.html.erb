@@ -1,4 +1,17 @@
 <div class="form-inline ml-auto x1">
+    <div class="field">
+      <%= form_tag activities_path, method: :get do %>
+      <%= text_field_tag :query, params[:query], class: "form-control",
+          placeholder: "Type a city"%>
+    </div>
+      <%= submit_tag "Search", class: "btn btn-outline-light ml-1 my-sm-0" %>
+    <% end %>
+    </div>
+  <br>
+  #
+    <%= render "shared/banner" %>
+
+<div class="form-inline ml-auto x1">
   <div class="field">
     <%= form_tag activities_path, method: :get do %>
     <%= text_field_tag :query, params[:query], class: "form-control",
@@ -11,6 +24,7 @@
   
 <%= render "shared/banner" %>
 <br>
+
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-6 col-lg-3 category">
