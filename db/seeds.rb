@@ -39,3 +39,5 @@ Chatroom.create!(activity_id: activity_4.id)
 
 activity_5 = Activity.create!(category: 'Ao ar livre', user_id: 6, title: 'Explorar a Paulista', initial_date: DateTime.now, final_date: finaldate, location: 'Avenida Paulista, 1000, São Paulo')
 Chatroom.create!(activity_id: activity_5.id)
+
+# test
