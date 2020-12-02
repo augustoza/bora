@@ -13,7 +13,7 @@ const dynamicText = () => {
         "jantar!",
         "para uma nova aventura!",
       ],
-      typeSpeed: 30,
+      typeSpeed: 85,
       loop: true,
     });
   }
