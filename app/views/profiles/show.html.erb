@@ -17,7 +17,15 @@
 <br>
 <%= link_to "Voltar", :back %>
 <%= link_to "Avaliar", new_profile_review_path(@user) %>
-<%= @average_rating %>
+<div id="review_rating">
+<% @average_rating.times do %>
+  <i class="fas fa-star"></i>
+<% end  %>
+<% (5 - @average_rating).times do %>
+  <i class="far fa-star"></i>
+<% end  %>
+
+</div>
 
 </div>
 
