@@ -1,5 +1,5 @@
 Class ReviewsController < ApplicationController
-def create_
+def create
     @user = User.find(params[:user_id]) 
     @review = Review.new(review_params)
     @review.user = @user
@@ -9,7 +9,7 @@ def create_
         render "user/show"
       end
     end
-   
+
     private
 
     def review_params
