@@ -1,6 +1,6 @@
 <div class="container">
+      <h3>Adicione uma nova atividade </h3>
   <div class="row">
-      <h3>Não encontrou a atividade que você quer fazer? </h3>
     <div class="col-sm-12 col-lg-8">
 
       <div class='form-content'>
@@ -13,7 +13,7 @@
           <%= f.input :title, :label => "Título" %>
           <%= f.input :category, as: :radio_buttons, collection: ['Ao ar livre',
            'Natureza', 'Aventura', 'Cultural', 'Festas', 'Bares', 'Shows', 'Gastronomia',
-            'Compras', 'Transporte', 'Esportes'], wrapper: :vertical_collection_inline, :label => "Categoria" %>
+            'Compras', 'Transporte', 'Esportes', 'Outros'], wrapper: :vertical_collection_inline, :label => "Categoria" %>
           <%= f.input :location, :label => "Local" %>
           <%= f.input :description, :label => "Descrição" %>
           <%= f.input :initial_date, :label => "Data inicial" %>
