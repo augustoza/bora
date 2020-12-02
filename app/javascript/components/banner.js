@@ -16,4 +16,4 @@ const dynamicText = () => {
   });
 };
 
-export {dynamicText};
+export { dynamicText };

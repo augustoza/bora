@@ -34,3 +34,11 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
 });
+
+// Typedjs
+import { dynamicText } from '../components/banner';
+
+document.addEventListener('turbolinks:load', function () { 
+  dynamicText(); });
+
+//TODO ----- SELECT2 COUNTRIES
