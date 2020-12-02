@@ -2,7 +2,11 @@ class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :edit, :update]
 
   def index
-    @activities = Activity.all
+    if params[:category]
+      @activities = Activity.where(category: params[:category])
+    else
+      @activities = Activity.all
+    end
   end
 
   def show
