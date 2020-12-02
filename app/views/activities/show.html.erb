@@ -1,5 +1,6 @@
 <div class="container">
 
+
   <h1><%= @activity.title %></h1>
 
   <div class="activity-show-wrapper">
@@ -18,6 +19,15 @@
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
 
+<div class="activity-show-wrapper">
+  <%= @activity.title %>
+  <%= @activity.location %>
+  <%= @activity.category %>
+  <%= @activity.initial_date %>
+  <%= @activity.final_date %>
+  <% @activity.latitude %><% @activity.longitude %>
+  <%= @activity.user.username %>
+</div>
 
 <% unless @exploration_act.include?(current_user) %>
   <%= simple_form_for [ @activity, @exploration ] do |f| %>
@@ -29,3 +39,7 @@
   <%= exploration.username %>
 <% end %>
 </div>
+
+<% if @exploration_act.include?(current_user) %>
+  <%= link_to "Go to chat!", chatroom_path(@chatroom) %>
+<% end %>
