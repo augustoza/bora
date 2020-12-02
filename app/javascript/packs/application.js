@@ -24,6 +24,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import { initChatroomCable } from '../channels/chatroom_channel'
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -35,5 +36,6 @@ document.addEventListener('turbolinks:load', () => {
   dynamicText(); 
   // Call your functions here, e.g:
   // initSelect2();
+  initChatroomCable();
 });
 //TODO ----- SELECT2 COUNTRIES
