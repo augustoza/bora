@@ -1,6 +1,7 @@
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :edit, :update]
-
+  before_action :set_geocode, only:  [:index, :show]
+  
   def index
     @activities = Activity.all
   end
@@ -46,5 +47,13 @@ class ActivitiesController < ApplicationController
 
   def set_activity
     @activity = Activity.find(params[:id])
+  end
+
+  def set_geocode
+    @markers = @activities.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
   end
 end
