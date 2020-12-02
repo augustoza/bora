@@ -1,5 +1,6 @@
 class Activity < ApplicationRecord
   belongs_to :user
+  has_many :messages
   validates :title, presence: true
   validates :initial_date, presence: true
   validates :final_date, presence: true

@@ -19,3 +19,7 @@
 <% @exploration_act.each do |exploration| %>
   <%= exploration.username %>
 <% end %>
+
+<% if @exploration_act.include?(current_user) %>
+  <%= link_to "Go to chat!", chatroom_path(@chatroom) %>
+<% end %>

@@ -8,6 +8,7 @@ class ActivitiesController < ApplicationController
   def show
     @exploration = Exploration.new
     @exploration_act = exploration_user_finder
+    @chatroom = Chatroom.find_by(activity_id: @activity)
   end
 
   def exploration_user_finder
@@ -23,6 +24,8 @@ class ActivitiesController < ApplicationController
   def create
     @activity = Activity.new(activity_params)
     @activity.user = current_user
+    @chatroom = Chatroom.new
+    @chatroom.activity = @activity
 
     if @activity.save
       redirect_to activity_path(@activity), notice: "Activity created"
