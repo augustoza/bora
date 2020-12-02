@@ -1,16 +1,16 @@
-  <div class="form-inline ml-auto x1">
-    <div class="field">
-      <%= form_tag activities_path, method: :get do %>
-      <%= text_field_tag :query, params[:query], class: "form-control",
-          placeholder: "Onde estás?" %>
-    </div>
-      <%= submit_tag "Search", class: "btn btn-outline-light ml-1 my-sm-0" %>
-    <% end %>
-    </div>
-  <br>
+<div class="form-inline ml-auto x1">
+  <div class="field">
+    <%= form_tag activities_path, method: :get do %>
+    <%= text_field_tag :query, params[:query], class: "form-control",
+        placeholder: "Onde estás?" %>
+  </div>
+    <%= submit_tag "Search", class: "btn btn-outline-light ml-1 my-sm-0" %>
+  <% end %>
+  </div>
+<br>
   
-    <%= render "shared/banner" %>
-
+<%= render "shared/banner" %>
+<br>
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-6 col-lg-3 category">
@@ -47,11 +47,11 @@
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/700x700/?car)">
         <%= link_to "Transportes", activities_path(:category => "Transportes") %>  
       </div>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/700x700/?)">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/700x700/?what)">
         <%= link_to "Outros", activities_path(:category => "Outros") %>  
       </div>
     </div>
   </div>
 </div>
     
-  <%= render "shared/footer" %>
+<%= render "shared/footer" %>
