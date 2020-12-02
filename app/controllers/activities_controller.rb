@@ -21,7 +21,8 @@ class ActivitiesController < ApplicationController
     @markers = @activity_map.geocoded.map do |activity|
       {
         lat: activity.latitude,
-        lng: activity.longitude
+        lng: activity.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { activity: activity })
       }
     end
     # @markers = [{lat: @activity.latitude, lng: @activity.longitude}]
