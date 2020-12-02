@@ -15,8 +15,9 @@ class ActivitiesController < ApplicationController
   def show
     @exploration = Exploration.new
     @exploration_act = exploration_user_finder
+    @activity_map = Activity.where(id: @activity.id)
 
-    @markers = Activity.where(id: @activity.id).geocoded.map do |activity|
+    @markers = @activity_map.geocoded.map do |activity|
       {
         lat: activity.latitude,
         lng: activity.longitude
