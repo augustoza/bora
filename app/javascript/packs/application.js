@@ -27,18 +27,13 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { dynamicText } from "../components/banner";
 import { initMapbox } from '../plugins/init_mapbox';
 
 document.addEventListener('turbolinks:load', () => {
-  initMapbox();
+  initMapbox(),
+  dynamicText(); 
   // Call your functions here, e.g:
   // initSelect2();
 });
-
-// Typedjs
-import { dynamicText } from '../components/banner';
-
-document.addEventListener('turbolinks:load', function () { 
-  dynamicText(); });
-
 //TODO ----- SELECT2 COUNTRIES
