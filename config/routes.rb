@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resources :activities, only: %i[index show new create edit update] do
     resources :explorations, only: %i[new create]
   end
+  resources :reviews, only: [:new, :create]
+  
 end

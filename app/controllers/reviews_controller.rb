@@ -1,18 +1,22 @@
-Class ReviewsController < ApplicationController
-def create
-    @user = User.find(params[:user_id]) 
+class ReviewsController < ApplicationController
+  def new
+    @review = Review.new
+  end
+
+  def create
     @review = Review.new(review_params)
-    @review.user = @user
+    @review.user = current_user
     if @review.save
-        redirect_to user_path(@user), notice: 'Review was created'
-      else
-        render "user/show"
-      end
+      redirect_to new_review_path
+    else
+      flash[:alert] = "Something went wrong."
+      render :new
     end
+  end
 
-    private
+  private
 
-    def review_params
-      params.require(:review).permit(:rating)
-    end
+  def review_params
+    params.require(:review).permit(:content, :rating)
+  end
 end
