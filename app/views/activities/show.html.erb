@@ -1,2 +1,21 @@
-<h1>Activities#show</h1>
-<p>Find me in app/views/activities/show.html.erb</p>
+<h1><%= @activity.title %></h1>
+
+<div class="activity-show-wrapper">
+  <%= @activity.title %>
+  <%= @activity.location %>
+  <%= @activity.initial_date %>
+  <%= @activity.final_date %>
+  <% @activity.latitude %><% @activity.longitude %>
+  <%= @activity.user.username %>
+</div>
+
+
+<% unless @exploration_act.include?(current_user) %>
+  <%= simple_form_for [ @activity, @exploration ] do |f| %>
+    <%= f.submit "Join this activity", class: "btn btn-primary" %>
+  <% end %>
+<% end %>
+
+<% @exploration_act.each do |exploration| %>
+  <%= exploration.username %>
+<% end %>

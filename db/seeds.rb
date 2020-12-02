@@ -23,12 +23,13 @@ User.create!(password: '123123', full_name: 'Joleno', username: 'joleno', countr
 #TODO------------------------------------
 
 finaldate = (DateTime.now +99)
+CATEGORIES = ['Ao ar livre', 'Natureza', 'Aventura', 'Cultural', 'Festas', 'Bares', 'Shows', 'Gastronomia', 'Compras', 'Transporte', 'Esportes']
 
-Activity.create!(user_id: 1, title: 'Explorar Buenos Aires', initial_date: DateTime.now, final_date: finaldate, location: 'Buenos Aires')
+Activity.create!(category: CATEGORIES.sample, user_id: 1, title: 'Explorar Buenos Aires', initial_date: DateTime.now, final_date: finaldate, location: 'Buenos Aires')
 
-Activity.create!(user_id: 2, title: 'Explorar o Louvre', initial_date: DateTime.now, final_date: finaldate, location: 'Paris')
+Activity.create!(category: CATEGORIES.sample, user_id: 2, title: 'Explorar o Louvre', initial_date: DateTime.now, final_date: finaldate, location: 'Paris')
 
-Activity.create!(user_id: 3, title: 'Grab a drink', initial_date: DateTime.now, final_date: finaldate, location: 'London')
+Activity.create!(category: CATEGORIES.sample, user_id: 3, title: 'Grab a drink', initial_date: DateTime.now, final_date: finaldate, location: 'London')
 
-Activity.create!(user_id: 4, title: 'Explore the area', initial_date: DateTime.now, final_date: finaldate, location: 'Tokyo')
+Activity.create!(category: CATEGORIES.sample, user_id: 4, title: 'Explore the area', initial_date: DateTime.now, final_date: finaldate, location: 'Tokyo')
 

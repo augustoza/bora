@@ -1,2 +1,21 @@
-<h1>Profiles#show</h1>
-<p>Find me in app/views/profiles/show.html.erb</p>
+<div class="container">
+  <h1 class='Username-show'><%=@user.username%></h1>
+
+    <div class='User-show'>
+      Name: <%= @user.full_name %>
+      <br>
+      Gender: <%= @user.genre %>
+      <br>
+      Country: <%= @user.country %>
+      <br>
+      Location: <%= @user.location %>
+      <br>
+      About: <%= @user.about %>
+    </div>
+
+ <br>
+<br>
+<h3>ADICIONAR UM BOTÃO DE BACK</h3>
+
+</div>
+
