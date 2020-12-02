@@ -8,5 +8,4 @@ Rails.application.routes.draw do
     resources :explorations, only: %i[new create]
   end
   resources :reviews, only: [:new, :create]
-  
 end

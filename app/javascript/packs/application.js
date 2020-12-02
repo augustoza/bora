@@ -24,6 +24,9 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import { initStarRating } from '../plugins/init_star_rating';
+
+initStarRating();
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
