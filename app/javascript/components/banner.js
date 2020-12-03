@@ -17,6 +17,7 @@ const dynamicText = () => {
       loop: true,
       smartBackspace: true,
       backSpeed: 30,
+      showCursor: false,
     });
   }
 };
