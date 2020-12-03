@@ -2,10 +2,15 @@
   <h4>Avaliações de <%= @user.full_name %> </h4>
   <% @reviews.each do |review| %>
   <div class="each-rating">
-    <%= review.rating %> 
-    <%# transformar o rating número em estrelas %>
+    <p>Anônimo</p> 
+    <% review.rating.times do %>
+      <i class="fas fa-star"></i>
+    <% end  %>  
+    <% (5 - review.rating).times do %>
+      <i class="far fa-star"></i>
+    <% end  %>
     <%= review.content %>
   </div>
   <% end %>
+<%= link_to "Voltar", :back %>
 </div>
-<%# colocar um back %>
