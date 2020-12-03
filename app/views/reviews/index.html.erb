@@ -1,6 +1,10 @@
-<% @reviews.each do |review| %>
-<div class="each-rating">
-<%= review.rating %>
-<%= review.content %>
+<div class="container">
+  <h4>Avaliações de <%= @user.full_name %> </h4>
+  <% @reviews.each do |review| %>
+  <div class="each-rating">
+    <%= review.rating %> 
+    <%# transformar o rating número em estrelas %>
+    <%= review.content %>
+  </div>
+  <% end %>
 </div>
-<% end %>

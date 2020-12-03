@@ -3,7 +3,6 @@ class ReviewsController < ApplicationController
   
   def index
     @reviews = Review.where(reviewed_user: @user)
-
   end
   
   def new
