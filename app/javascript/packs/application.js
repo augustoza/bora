@@ -32,13 +32,14 @@ import { initChatroomCable } from '../channels/chatroom_channel'
 // import { initSelect2 } from '../components/init_select2';
 import { dynamicText } from "../components/banner";
 import { initMapbox } from '../plugins/init_mapbox';
+import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
   initStarRating();
   initMapbox(),
-  dynamicText(); 
+  dynamicText();
+  initSelect2();
   // Call your functions here, e.g:
-  // initSelect2();
   initChatroomCable();
 });
 //TODO ----- SELECT2 COUNTRIES
