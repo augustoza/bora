@@ -1,46 +1,103 @@
-    <%= render "shared/banner" %>
-
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12 col-md-6 col-lg-3 category">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/700x700/?street)">
-        <%= link_to "Ao ar livre", activities_path(:category => "Ao ar livre") %>  
-      </div>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/700x700/?nature)">
-        <%= link_to "Natureza", activities_path(:category => "Natureza") %>  
-      </div>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/700x700/?art)">
-        <%= link_to "Cultural", activities_path(:category => "Cultural") %>
-      </div>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/700x700/?sport)">
-        <%= link_to "Esportes", activities_path(:category => "Esportes") %>
-      </div>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/700x700/?food)">
-        <%= link_to "Gastronomia", activities_path(:category => "Gastronomia") %>  
-      </div>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/700x700/?adventure)">
-        <%= link_to "Aventura", activities_path(:category => "Aventura") %>  
-      </div>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/700x700/?party)">
-        <%= link_to "Festas", activities_path(:category => "Festas") %>  
-      </div>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/700x700/?pub)">
-        <%= link_to "Bares", activities_path(:category => "Bares") %>  
-      </div>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/700x700/?music)">
-        <%= link_to "Shows", activities_path(:category => "Shows") %>  
-      </div>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/700x700/?shopping)">
-        <%= link_to "Compras", activities_path(:category => "Compras") %>  
-      </div>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/700x700/?car)">
-        <%= link_to "Transportes", activities_path(:category => "Transportes") %>  
-      </div>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/700x700/?what)">
-        <%= link_to "Outros", activities_path(:category => "Outros") %>  
-      </div>
+<div class="form-inline ml-auto x1">
+  <div class="field">
+    <%= form_tag activities_path, method: :get do %>
+      <%= text_field_tag :query, params[:query], class: "form-control",
+          placeholder: "Type a city"%>
     </div>
+    <%= submit_tag "Search", class: "btn btn-outline-light ml-1 my-sm-0" %>
+  <% end %>
+</div>
+<br>
+#
+<%= render "shared/banner" %>
+<%= link_to "http://www.facebook.com", id:"item_1" do %>
+  #your code here
+<% end %>
+
+<div class="category multiple-items">
+  <div class="carousel-category">
+    <%= link_to activities_path(:category => "Ao ar livre") do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)), url(https://source.unsplash.com/random/700x700/?street)">
+        <p>Ao ar livre</p>
+      </div>
+    <% end %>
+  </div>
+  <div class="carousel-category">
+    <%= link_to activities_path(:category => "Natureza") do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)), url(https://source.unsplash.com/random/700x700/?nature)">
+        <p>Natureza</p>
+      </div>
+    <% end %>
+  </div>
+  <div class="carousel-category">
+    <%= link_to activities_path(:category => "Cultural") do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)), url(https://source.unsplash.com/random/700x700/?art)">
+        <p>Cultural</p>
+      </div>
+    <% end %>
+  </div>
+  <div class="carousel-category">
+    <%= link_to activities_path(:category => "Esportes") do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)), url(https://source.unsplash.com/random/700x700/?sport)">
+        <p>Esportes</p>
+      </div>
+    <% end %>
+  </div>
+  <div class="carousel-category">
+    <%= link_to activities_path(:category => "Gastronomia") do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)), url(https://source.unsplash.com/random/700x700/?food)">
+        <p>Gastronomia</p>
+      </div>
+    <% end %>
+  </div>
+  <div class="carousel-category">
+    <%= link_to activities_path(:category => "Aventura") do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)), url(https://source.unsplash.com/random/700x700/?adventure)">
+        <p>Aventura</p>
+      </div>
+    <% end %>
+  </div>
+  <div class="carousel-category">
+    <%= link_to activities_path(:category => "Festas") do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)), url(https://source.unsplash.com/random/700x700/?party)">
+        <p>Festas</p>
+      </div>
+    <% end %>
+  </div>
+  <div class="carousel-category">
+    <%= link_to activities_path(:category => "Bares") do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)), url(https://source.unsplash.com/random/700x700/?pub)">
+        <p>Bares</p>
+      </div>
+    <% end %>
+  </div>
+  <div class="carousel-category">
+    <%= link_to activities_path(:category => "Shows") do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)), url(https://source.unsplash.com/random/700x700/?music)">
+        <p>Shows</p>
+      </div>
+    <% end %>
+  </div>
+  <div class="carousel-category">
+    <%= link_to activities_path(:category => "Compras") do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)), url(https://source.unsplash.com/random/700x700/?shopping)">
+        <p>Compras</p>
+      </div>
+    <% end %>
+  </div>
+  <div class="carousel-category">
+    <%= link_to activities_path(:category => "Transportes") do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)), url(https://source.unsplash.com/random/700x700/?car)">
+        <p>Transportes</p>
+      </div>
+    <% end %>
+  </div>
+  <div class="carousel-category">
+    <%= link_to activities_path(:category => "Outros") do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)), url(https://source.unsplash.com/random/700x700/?what)">
+        <p>Outros</p>
+      </div>
+    <% end %>
   </div>
 </div>
-    
 <%= render "shared/footer" %>
