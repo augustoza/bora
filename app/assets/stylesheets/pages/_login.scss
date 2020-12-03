@@ -1,26 +1,23 @@
-.login-text {
-    color: whitesmoke;
-    font-family: 'Patua One', cursive;
-  }
-  
-  .form-inputs {
-    color: whitesmoke;
+   .form-inputs {
+    color: rgb(10, 10, 10);
     font-family: Arial, Helvetica, sans-serif;
   }
   
-  .login {
-    padding: 30px;
+  .form-actions {
+    color: rgb(10, 10, 10);
+    font-family: Arial,Helvetica,
   }
   
-  .registration {
-    color: whitesmoke;
-  }
-  
-  .my-4 {
-    color: whitesmoke;
-  }
-  
-  .login-link {
-    margin-top: 15px;
-    color: whitesmoke;
+  .login-form {
+    width:50%;
+    margin: auto;
+    padding: 10px 20px;
+    margin-top: 50px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 2px rgba(0,0,0,0.1);
+    background-color: white;
+    .btn {
+      width: 100%;
+      margin-bottom: 20px
+    }
   }
