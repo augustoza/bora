@@ -23,12 +23,21 @@ User.create!(password: '123123', full_name: 'Joleno', username: 'joleno', countr
 #TODO------------------------------------
 
 finaldate = (DateTime.now +99)
+CATEGORIES = ['Ao ar livre', 'Natureza', 'Aventura', 'Cultural', 'Festas', 'Bares', 'Shows', 'Gastronomia', 'Compras', 'Transporte', 'Esportes']
 
-Activity.create!(user_id: 1, title: 'Explorar Buenos Aires', initial_date: DateTime.now, final_date: finaldate, location: 'Buenos Aires')
+activity_1 = Activity.create!(category: CATEGORIES.sample, user_id: 1, title: 'Explorar Buenos Aires', initial_date: DateTime.now, final_date: finaldate, location: 'Buenos Aires')
+Chatroom.create!(activity_id: activity_1.id)
 
-Activity.create!(user_id: 2, title: 'Explorar o Louvre', initial_date: DateTime.now, final_date: finaldate, location: 'Paris')
+activity_2 = Activity.create!(category: CATEGORIES.sample, user_id: 2, title: 'Explorar o Louvre', initial_date: DateTime.now, final_date: finaldate, location: 'Paris')
+Chatroom.create!(activity_id: activity_2.id)
 
-Activity.create!(user_id: 3, title: 'Grab a drink', initial_date: DateTime.now, final_date: finaldate, location: 'London')
+activity_3 = Activity.create!(category: CATEGORIES.sample, user_id: 3, title: 'Grab a drink', initial_date: DateTime.now, final_date: finaldate, location: 'London')
+Chatroom.create!(activity_id: activity_3.id)
 
-Activity.create!(user_id: 4, title: 'Explore the area', initial_date: DateTime.now, final_date: finaldate, location: 'Tokyo')
+activity_4 = Activity.create!(category: CATEGORIES.sample, user_id: 4, title: 'Explore the area', initial_date: DateTime.now, final_date: finaldate, location: 'Tokyo')
+Chatroom.create!(activity_id: activity_4.id)
 
+activity_5 = Activity.create!(category: 'Ao ar livre', user_id: 6, title: 'Explorar a Paulista', initial_date: DateTime.now, final_date: finaldate, location: 'Avenida Paulista, 1000, São Paulo')
+Chatroom.create!(activity_id: activity_5.id)
+
+# test
