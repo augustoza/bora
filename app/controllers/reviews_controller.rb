@@ -1,5 +1,10 @@
 class ReviewsController < ApplicationController
   before_action :set_user, only: [:new, :create]
+  
+  def index
+    @reviews = Reviews.all
+  end
+  
   def new
     @review = Review.new
   end
