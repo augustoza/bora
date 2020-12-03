@@ -1,5 +1,7 @@
 <div class="container">
   <h1 class='Username-show'><%=@user.username%></h1>
+  <img src="<%= "https://lipis.github.io/flag-icon-css/flags/4x3/#{@country_code.downcase}.svg" %>" alt="country-flag" width="60" />
+
     
     <div class='User-show'>
       Name: <%= @user.full_name %>
