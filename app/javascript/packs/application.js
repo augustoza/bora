@@ -26,7 +26,6 @@ require("channels")
 import "bootstrap";
 import { initStarRating } from '../plugins/init_star_rating';
 
-initStarRating();
 import { initChatroomCable } from '../channels/chatroom_channel'
 
 // Internal imports, e.g:
@@ -35,6 +34,7 @@ import { dynamicText } from "../components/banner";
 import { initMapbox } from '../plugins/init_mapbox';
 
 document.addEventListener('turbolinks:load', () => {
+  initStarRating();
   initMapbox(),
   dynamicText(); 
   // Call your functions here, e.g:
