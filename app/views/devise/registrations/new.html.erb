@@ -30,7 +30,8 @@
       <%= f.input :country, 
                   prompt: 'Country',
                   label: false,
-                  collection: User::COUNTRIES %>
+                  input_html: { class: 'select2' },
+                  collection: User::LIST_OF_COUNTRIES %>
       <%= f.input :password,
                   required: true,
                   placeholder: 'Password',
