@@ -93,7 +93,6 @@ ActiveRecord::Schema.define(version: 2020_12_02_141941) do
   add_foreign_key "explorations", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
-  # add_foreign_key "reviews", "explorations"
   add_foreign_key "reviews", "users"
   add_foreign_key "reviews", "users", column: "reviewed_user_id"
 end
