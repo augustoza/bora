@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
   before_action :set_user, only: [:new, :create]
   
   def index
-    @reviews = Reviews.all
+    @reviews = Review.all
   end
   
   def new

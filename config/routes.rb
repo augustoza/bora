@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :profiles, only: %i[show edit update] do
-    resources :reviews, only: [:new, :create]
+    resources :reviews, only: [:index, :new, :create]
   end
   resources :activities, only: %i[index show new create edit update] do
     resources :explorations, only: %i[new create]
