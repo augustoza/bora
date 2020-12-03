@@ -8,6 +8,7 @@
       <%= f.input :country,placeholder:'Country',label: false %>
       <%= f.input :genre, prompt: 'Gender', label: false,collection: User::GENRES %>
       <%=f.input :username, placeholder:'Username',label: false %>
+      <%= f.submit 'Save changes', class: 'btn btn-warning' %>
     <% end %>
   </div>
 </div>
