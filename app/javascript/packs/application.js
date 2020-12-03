@@ -24,6 +24,9 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import { initStarRating } from '../plugins/init_star_rating';
+
+initStarRating();
 import { initChatroomCable } from '../channels/chatroom_channel'
 
 // Internal imports, e.g:

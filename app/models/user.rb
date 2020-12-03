@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :explorations
   has_many :explored_activities, source: :activity, through: :explorations
   has_many :activities
+  has_many :received_reviews, class_name: "Review", foreign_key: "reviewed_user_id"
   include Countries
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable

@@ -2,6 +2,7 @@
   <h1 class='Username-show'><%=@user.username%></h1>
   <img src="<%= "https://lipis.github.io/flag-icon-css/flags/4x3/#{@country_code.downcase}.svg" %>" alt="country-flag" width="60" />
 
+    
     <div class='User-show'>
       Name: <%= @user.full_name %>
       <br>
@@ -16,8 +17,20 @@
 
  <br>
 <br>
+<%= link_to "Avaliar", new_profile_review_path(@user) %>
+<div id="review_rating">
+<% if @average_rating != nil %>
+<% @average_rating.times do %>
+  <i class="fas fa-star"></i>
+<% end  %>
+<% (5 - @average_rating).times do %>
+  <i class="far fa-star"></i>
+<% end  %>
+<% end %>
+<%= link_to "Ver reviews", profile_reviews_path(@user) %>
 
-<h3>ADICIONAR UM BOTÃO DE BACK</h3>
+</div>
 
+<%= link_to "Voltar", :back %>
 </div>
 
