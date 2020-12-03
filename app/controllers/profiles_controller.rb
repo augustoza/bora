@@ -1,6 +1,9 @@
 class ProfilesController < ApplicationController
+  include Countries
+
   def show
     @user = User.find(params[:id])
+    @country_code = COUNTRIES.key(@user.country.capitalize).to_s
   end
 
   def edit
