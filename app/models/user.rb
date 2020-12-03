@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
+  
   has_many :reviews
   has_many :explorations
   has_many :explored_activities, source: :activity, through: :explorations
