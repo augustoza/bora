@@ -1,8 +1,9 @@
 class ReviewsController < ApplicationController
-  before_action :set_user, only: [:new, :create]
+  before_action :set_user, only: [:index, :new, :create]
   
   def index
-    @reviews = Review.all
+    @reviews = Review.where(reviewed_user: @user)
+
   end
   
   def new

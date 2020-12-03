@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+  
   def show
     @user = User.find(params[:id])
     @ratings = Review.where(reviewed_user: @user).map { |review| review.rating }
