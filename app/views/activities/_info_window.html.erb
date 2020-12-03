@@ -1,0 +1,5 @@
+<div class="container">
+  <h2><%= link_to activity.title, activity_path(activity), class: "btn btn-outline-info btn-sm" %></h2>
+  <p><%= activity.location %></p>
+  <p>Created by: <%= link_to activity.user.username, profile_path(activity.id) %></p>
+</div>

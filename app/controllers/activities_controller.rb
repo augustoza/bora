@@ -2,6 +2,16 @@ class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :edit, :update]
 
   def index
+    @activities = Activity.all
+
+    @markers = @activities.geocoded.map do |activity|
+      {
+        lat: activity.latitude,
+        lng: activity.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { activity: activity })
+      }
+    end
+    
     if params[:category]
       @activities = Activity.where(category: params[:category])
     else
@@ -12,6 +22,16 @@ class ActivitiesController < ApplicationController
   def show
     @exploration = Exploration.new
     @exploration_act = exploration_user_finder
+    @activity_map = Activity.where(id: @activity.id)
+    @markers = @activity_map.geocoded.map do |activity|
+      {
+        lat: activity.latitude,
+        lng: activity.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { activity: activity })
+      }
+    end
+    # @markers = [{lat: @activity.latitude, lng: @activity.longitude}]
+    @chatroom = Chatroom.find_by(activity_id: @activity)
   end
 
   def exploration_user_finder
@@ -27,6 +47,8 @@ class ActivitiesController < ApplicationController
   def create
     @activity = Activity.new(activity_params)
     @activity.user = current_user
+    @chatroom = Chatroom.new
+    @chatroom.activity = @activity
 
     if @activity.save
       redirect_to activity_path(@activity), notice: "Activity created"
