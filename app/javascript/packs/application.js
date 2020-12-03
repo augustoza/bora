@@ -33,6 +33,7 @@ import { initChatroomCable } from '../channels/chatroom_channel'
 // import { initSelect2 } from '../components/init_select2';
 import { dynamicText } from "../components/banner";
 import { initMapbox } from '../plugins/init_mapbox';
+import { initCarousel } from "../components/slick";
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox(),
@@ -40,5 +41,6 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initChatroomCable();
+  initCarousel();
 });
 //TODO ----- SELECT2 COUNTRIES
