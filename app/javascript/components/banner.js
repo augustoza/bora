@@ -5,16 +5,18 @@ const dynamicText = () => {
   if (banner) {
     new Typed("#bora", {
       strings: [
-        "viajar!",
-        "conhecer o mundo!",
-        "conhecer pessoas!",
-        "explorar um lugar novo!",
-        "se divertir!",
-        "jantar!",
-        "para uma nova aventura!",
+        "Bora viajar!",
+        "Bora conhecer o mundo!",
+        "Bora conhecer pessoas!",
+        "Bora explorar um lugar novo!",
+        "Bora se divertir!",
+        "Bora jantar!",
+        "Bora para uma nova aventura!",
       ],
       typeSpeed: 85,
       loop: true,
+      smartBackspace: true,
+      backSpeed: 30,
     });
   }
 };
