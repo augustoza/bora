@@ -15,22 +15,23 @@
       About: <%= @user.about %>
     </div>
 
- <br>
-<br>
-<%= link_to "Avaliar", new_profile_review_path(@user) %>
-<div id="review_rating">
-<% if @average_rating != nil %>
-<% @average_rating.times do %>
-  <i class="fas fa-star"></i>
-<% end  %>
-<% (5 - @average_rating).times do %>
-  <i class="far fa-star"></i>
-<% end  %>
-<% end %>
-<%= link_to "Ver reviews", profile_reviews_path(@user) %>
-
-</div>
-
-<%= link_to "Voltar", :back %>
+  <br>
+  <br>
+  <%= link_to "Avaliar este usuário", new_profile_review_path(@user) %>
+  <div id="review_rating">
+    <% if @average_rating != nil %>
+    <% @average_rating.times do %>
+      <i class="fas fa-star"></i>
+    <% end  %>
+    <% (5 - @average_rating).times do %>
+      <i class="far fa-star"></i>
+    <% end  %>
+    <% end %>
+    <%= link_to "Ver reviews", profile_reviews_path(@user) %>
+  </div>
+  <br>
+  <h5>Atividades</h5>
+  
+  <%= link_to "Voltar", :back %>
 </div>
 
