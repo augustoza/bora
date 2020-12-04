@@ -49,7 +49,8 @@ class ActivitiesController < ApplicationController
     @activity.user = current_user
     @exploration = Exploration.new
     @chatroom = Chatroom.new
-    
+    @chatroom.activity = @activity
+
     if @activity.save
       redirect_to activity_path(@activity), notice: "Activity created"
       @chatroom.activity_id = @activity.id
