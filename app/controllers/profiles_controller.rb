@@ -6,6 +6,7 @@ class ProfilesController < ApplicationController
     @country_code = COUNTRIES.key(@user.country.capitalize).to_s
     @ratings = Review.where(reviewed_user: @user).map { |review| review.rating }
     @average_rating = @ratings.sum/@ratings.size unless @ratings.size == 0
+    @explorations = Exploration.where(user: @user)
   end
 
   def edit

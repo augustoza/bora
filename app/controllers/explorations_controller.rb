@@ -1,4 +1,10 @@
 class ExplorationsController < ApplicationController
+  
+  def index
+    @user = User.find(params[:id])
+    @explorations = Exploration.where(user: @user)
+  end
+  
   def new
     @exploration = Exploration.new
   end

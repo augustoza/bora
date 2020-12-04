@@ -32,8 +32,12 @@
   </div>
   <br>
   <h5>Atividades</h5>
-  <%= @exploration.activity.title unless @exploration == nil %>
-  
+  <% if @explorations != nil %>
+  <% @explorations.each do |exploration| %>
+    <%= exploration.activity.title %>
+  <% end %>
+  <% end %>
+   <br>
   <%= link_to "Voltar", :back %>
 </div>
 

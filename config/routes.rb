@@ -11,6 +11,6 @@ Rails.application.routes.draw do
     resources :messages, only: :create
   end
   resources :activities, only: %i[index show new create edit update] do
-    resources :explorations, only: %i[new create]
+    resources :explorations, only: %i[index new create]
   end
 end
