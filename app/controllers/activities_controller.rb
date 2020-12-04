@@ -47,11 +47,16 @@ class ActivitiesController < ApplicationController
   def create
     @activity = Activity.new(activity_params)
     @activity.user = current_user
+    @exploration = Exploration.new
     @chatroom = Chatroom.new
-    # @chatroom.activity = @activity
-
+    
     if @activity.save
       redirect_to activity_path(@activity), notice: "Activity created"
+      @chatroom.activity_id = @activity.id
+      @chatroom.save
+      @exploration.activity_id = @activity.id
+      @exploration.user = current_user
+      @exploration.save
     else
       render :new
     end
