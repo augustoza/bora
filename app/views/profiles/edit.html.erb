@@ -3,7 +3,7 @@
 
 <div class="container">
   <div class="edit-profile">
-    <%= simple_form_for @user, url: profile_path, method: :patch do |f| %>
+    <%= simple_form_for @user, url: profile_path, method: 'patch'  do |f| %>
       <%= f.input :full_name, placeholder:'FullName', label: false %>
       <%= f.input :country, placeholder:'Country', label: false, collection: User::LIST_OF_COUNTRIES %>
       <%= f.input :genre, prompt: 'Gender', label: false, collection: User::GENRES %>
