@@ -4,8 +4,8 @@ class ProfilesController < ApplicationController
   def show
     @user = User.find(params[:id])
     @country_code = COUNTRIES.key(@user.country.capitalize).to_s
-   # @ratings = @user.received_reviews.map { |review| review.rating }
-    #@average_rating = @ratings.sum/@ratings.size unless @ratings.size == 0
+    @ratings = Review.where(reviewed_user: @user).map { |review| review.rating }
+    @average_rating = @ratings.sum/@ratings.size unless @ratings.size == 0
   end
 
   def edit
