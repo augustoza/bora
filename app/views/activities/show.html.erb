@@ -1,18 +1,33 @@
 <div class="container">
 
 
-  <h1><%= @activity.title %></h1>
+
 
   <div class="activity-show-wrapper">
-    <%= @activity.title %>
-    <%= @activity.location %>
-    <%= @activity.category %>
-    <%= @activity.initial_date %>
-    <%= @activity.final_date %>
-    <% @activity.latitude %><% @activity.longitude %>
-    <%= @activity.user.username %>
-  </div>
-
+  <h1 class="text-center"><%= @activity.title %></h1>
+<br>
+    <div class="container">
+      <div class="row ml-3">
+        <div class="col">Atividade:</div>
+        <div class="col"><%= @activity.title %></div>
+        <div class="w-100"></div>
+        <div class="col">Localização:</div>
+        <div class="col"><%= @activity.location %></div>
+        <div class="w-100"></div>
+        <div class="col">Categoria:</div>
+        <div class="col"><%= @activity.category %></div>
+        <div class="w-100"></div>
+        <div class="col">Início:</div>
+        <div class="col"><%= @activity.initial_date %></div>
+        <div class="w-100"></div>
+        <div class="col">Fim:</div>
+        <div class="col"><%= @activity.final_date %></div>
+        <div class="w-100"></div>
+        <div class="col">Criado por:</div>
+        <div class="col"><%= link_to @activity.user.username, profile_path %></div>
+      </div>
+    </div>
+<br>
   <div>
     <div id="map"
       style="width: 100%; height: 500px;"
@@ -31,8 +46,12 @@
   <%= exploration.username %>
 <% end %>
 
+<%= link_to "voltar", activities_path, class: "btn btn-primary"  %>
+<br>
 <% if @exploration_act.include?(current_user) %>
-  <%= link_to "Go to chat!", chatroom_path(@chatroom) %>
+  <%= link_to "Go to chat!", chatroom_path(@chatroom), class: "btn btn-primary" %>
 <% end %>
-
 </div>
+
+
+
