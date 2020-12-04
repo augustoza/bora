@@ -1,89 +1,16 @@
 <%= render "shared/banner" %>
 
-<div class="category multiple-items">
-  <div class="carousel-category">
-    <%= link_to activities_path(:category => "Ao ar livre") do %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)), url(https://source.unsplash.com/random/700x700/?street)">
-        <p>Ao ar livre</p>
-      </div>
-    <% end %>
-  </div>
-  <div class="carousel-category">
-    <%= link_to activities_path(:category => "Natureza") do %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)), url(https://source.unsplash.com/random/700x700/?nature)">
-        <p>Natureza</p>
-      </div>
-    <% end %>
-  </div>
-  <div class="carousel-category">
-    <%= link_to activities_path(:category => "Cultural") do %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)), url(https://source.unsplash.com/random/700x700/?art)">
-        <p>Cultural</p>
-      </div>
-    <% end %>
-  </div>
-  <div class="carousel-category">
-    <%= link_to activities_path(:category => "Esportes") do %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)), url(https://source.unsplash.com/random/700x700/?sport)">
-        <p>Esportes</p>
-      </div>
-    <% end %>
-  </div>
-  <div class="carousel-category">
-    <%= link_to activities_path(:category => "Gastronomia") do %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)), url(https://source.unsplash.com/random/700x700/?food)">
-        <p>Gastronomia</p>
-      </div>
-    <% end %>
-  </div>
-  <div class="carousel-category">
-    <%= link_to activities_path(:category => "Aventura") do %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)), url(https://source.unsplash.com/random/700x700/?adventure)">
-        <p>Aventura</p>
-      </div>
-    <% end %>
-  </div>
-  <div class="carousel-category">
-    <%= link_to activities_path(:category => "Festas") do %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)), url(https://source.unsplash.com/random/700x700/?party)">
-        <p>Festas</p>
-      </div>
-    <% end %>
-  </div>
-  <div class="carousel-category">
-    <%= link_to activities_path(:category => "Bares") do %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)), url(https://source.unsplash.com/random/700x700/?pub)">
-        <p>Bares</p>
-      </div>
-    <% end %>
-  </div>
-  <div class="carousel-category">
-    <%= link_to activities_path(:category => "Shows") do %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)), url(https://source.unsplash.com/random/700x700/?music)">
-        <p>Shows</p>
-      </div>
-    <% end %>
-  </div>
-  <div class="carousel-category">
-    <%= link_to activities_path(:category => "Compras") do %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)), url(https://source.unsplash.com/random/700x700/?shopping)">
-        <p>Compras</p>
-      </div>
-    <% end %>
-  </div>
-  <div class="carousel-category">
-    <%= link_to activities_path(:category => "Transportes") do %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)), url(https://source.unsplash.com/random/700x700/?car)">
-        <p>Transportes</p>
-      </div>
-    <% end %>
-  </div>
-  <div class="carousel-category">
-    <%= link_to activities_path(:category => "Outros") do %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)), url(https://source.unsplash.com/random/700x700/?what)">
-        <p>Outros</p>
-      </div>
-    <% end %>
-  </div>
+<div class="categories-pack">
+  <%= link_to activities_path do %>
+    <div class="categories-card">
+      <p>Veja todas as categorias!</p>
+    </div>
+  <% end %>
 </div>
+
+<%= render "shared/carousel" %>
+<br>
+  
+  <%= render "shared/card_activities" %>
+  
 <%= render "shared/footer" %>

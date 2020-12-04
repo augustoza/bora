@@ -13,8 +13,9 @@ class ProfilesController < ApplicationController
   end
 
   def update
+    @user = User.find(params[:id])
     @user.update(user_params)
-    redirect_to user_path(@user), notice: "Infos updated"
+    redirect_to profile_path(@user), notice: "Infos updated"
   end
 
   def user_params
