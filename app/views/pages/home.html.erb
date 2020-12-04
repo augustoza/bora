@@ -1,5 +1,13 @@
 <%= render "shared/banner" %>
 
+<div class="categories-pack">
+  <%= link_to activities_path do %>
+    <div class="categories-card">
+      <p>Veja todas as categorias!</p>
+    </div>
+  <% end %>
+</div>
+
 <div class="category multiple-items">
   <div class="carousel-category">
     <%= link_to activities_path(:category => "Ao ar livre") do %>
@@ -86,4 +94,8 @@
     <% end %>
   </div>
 </div>
+<br>
+  
+  <%= render "shared/card_activities" %>
+  
 <%= render "shared/footer" %>
