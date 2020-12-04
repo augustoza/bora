@@ -4,8 +4,8 @@ class ProfilesController < ApplicationController
   def show
     @user = User.find(params[:id])
     @country_code = COUNTRIES.key(@user.country.capitalize).to_s
-    @ratings = Review.where(reviewed_user: @user).map { |review| review.rating }
-    @average_rating = @ratings.sum/@ratings.size unless @ratings.size == 0
+   # @ratings = @user.received_reviews.map { |review| review.rating }
+    #@average_rating = @ratings.sum/@ratings.size unless @ratings.size == 0
   end
 
   def edit
@@ -13,8 +13,9 @@ class ProfilesController < ApplicationController
   end
 
   def update
+    @user = User.find(params[:id])
     @user.update(user_params)
-    redirect_to user_path(@user), notice: "Infos updated"
+    redirect_to profile_path(@user), notice: "Infos updated"
   end
 
   def user_params
