@@ -48,7 +48,7 @@ class ActivitiesController < ApplicationController
     @activity = Activity.new(activity_params)
     @activity.user = current_user
     @chatroom = Chatroom.new
-    # @chatroom.activity = @activity
+    @chatroom.activity = @activity
 
     if @activity.save
       redirect_to activity_path(@activity), notice: "Activity created"
