@@ -4,14 +4,28 @@
   <h1><%= @activity.title %></h1>
 
   <div class="activity-show-wrapper">
-    <%= @activity.title %>
-    <%= @activity.location %>
-    <%= @activity.category %>
-    <%= @activity.initial_date %>
-    <%= @activity.final_date %>
-    <% @activity.latitude %><% @activity.longitude %>
-    <%= @activity.user.username %>
-  </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col">Atividade:</div>
+        <div class="col"><%= @activity.title %></div>
+        <div class="w-100"></div>
+        <div class="col">Localização:</div>
+        <div class="col"><%= @activity.location %></div>
+        <div class="w-100"></div>
+        <div class="col">Categoria:</div>
+        <div class="col"><%= @activity.category %></div>
+        <div class="w-100"></div>
+        <div class="col">Início:</div>
+        <div class="col"><%= @activity.initial_date %></div>
+        <div class="w-100"></div>
+        <div class="col">Fim:</div>
+        <div class="col"><%= @activity.final_date %></div>
+        <div class="w-100"></div>
+        <div class="col">Criado por:</div>
+        <div class="col"><%= @activity.user.username %></div>
+      </div>
+    </div>
 
   <div>
     <div id="map"
