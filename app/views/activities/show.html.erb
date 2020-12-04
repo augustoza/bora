@@ -1,12 +1,13 @@
 <div class="container">
 
 
-  <h1><%= @activity.title %></h1>
+
 
   <div class="activity-show-wrapper">
-
+  <h1 class="text-center"><%= @activity.title %></h1>
+<br>
     <div class="container">
-      <div class="row">
+      <div class="row ml-3">
         <div class="col">Atividade:</div>
         <div class="col"><%= @activity.title %></div>
         <div class="w-100"></div>
@@ -26,7 +27,7 @@
         <div class="col"><%= link_to @activity.user.username, profile_path %></div>
       </div>
     </div>
-
+<br>
   <div>
     <div id="map"
       style="width: 100%; height: 600px;"
