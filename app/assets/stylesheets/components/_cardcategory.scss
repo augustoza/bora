@@ -9,13 +9,10 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-position: center;
 
   &:hover {
     filter: brightness(60%);
-  }
-
-  a:hover {
-    text-decoration: none;
   }
 
   p {
@@ -24,6 +21,35 @@
 }
 
 .category{
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.categories-card {
+  height: 150px;
+  width: 800px;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-size: cover;
+
+  p {
+    margin-bottom: 0px;
+  }
+
+  &:hover {
+    filter: brightness(60%);
+  }
+}
+
+.categories-pack {
   a:hover {
     text-decoration: none;
   }
