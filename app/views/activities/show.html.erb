@@ -23,7 +23,7 @@
         <div class="col"><%= @activity.final_date %></div>
         <div class="w-100"></div>
         <div class="col">Criado por:</div>
-        <div class="col"><%= @activity.user.username %></div>
+        <div class="col"><%= link_to @activity.user.username, profile_path %></div>
       </div>
     </div>
 
