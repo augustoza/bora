@@ -44,24 +44,14 @@
                   label: false,
                   input_html: { autocomplete: "new-password" } %>
       <%= f.input :photo, as: :file %>
-    </div>
+      </div>
 
-<<<<<<< HEAD
   <div class="form-actions">
-    <%= f.button :submit, "Sign up",  %>
+    <%= f.button :submit, "Registrar", class: 'btn btn-primary' %>
   </div>
 <% end %>
-=======
-    <div class="form-actions">
-      <%= f.button :submit, "Sign up" %>
-    </div>
-  <% end %>
->>>>>>> 1088bdccf0968ced130e89ffb21f3aa3ba46b309
 
-<h3>
- Adicionar um botao de back
-</h3>
+<%= link_to "Voltar", root_path, class: 'btn btn-primary' %>
 
-
-  <%= render "devise/shared/links" %>
+ <%= render "devise/shared/links" %>
 </div>
