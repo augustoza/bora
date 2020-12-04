@@ -1,3 +1,5 @@
+
+
 <div class="container">
   <h2>Sign up</h2>
 
@@ -44,17 +46,17 @@
                   label: false,
                   input_html: { autocomplete: "new-password" } %>
       <%= f.input :photo, as: :file %>
-    </div>
+      </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, "Sign up" %>
-    </div>
-  <% end %>
+  <div class="form-actions">
+    <%= f.button :submit, "Registrar", class: 'btn btn-primary' %>
+  </div>
+<% end %>
 
-<h3>
- Adicionar um botao de back
-</h3>
+<div>
+<%= link_to "Voltar", root_path, class: 'btn btn-primary' %>
 
 
-  <%= render "devise/shared/links" %>
+
+ <%= render "devise/shared/links" %>
 </div>
