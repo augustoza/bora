@@ -32,7 +32,12 @@
   </div>
   <br>
   <h5>Atividades</h5>
-  
+  <% if @explorations != nil %>
+  <% @explorations.each do |exploration| %>
+    <%= exploration.activity.title %>
+  <% end %>
+  <% end %>
+   <br>
   <%= link_to "Voltar", :back %>
 </div>
 

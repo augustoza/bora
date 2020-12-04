@@ -1,4 +1,5 @@
 require 'date'
+require 'open-uri'
 
 #TODO------------------------------------
 #TODO -----------> USERS <---------------
@@ -14,7 +15,9 @@ User.create!(password: '123abc', full_name: 'Thiago', username: 'Thiagoav', coun
 
 User.create!(password: '123abc', full_name: 'Roberto', username: 'Bebeto', country: 'Japan', genre: 'male', email: 'bebeto@teste.com')
 
-User.create!(password: '123abc', full_name: 'Laranjeira', username: 'Laranjeira', country: 'China', genre: 'female', email: 'laranja@teste.com')
+laranjeira = User.create!(password: '123abc', full_name: 'Laranjeira', username: 'Laranjeira', country: 'China', genre: 'female', email: 'laranja@teste.com')
+file = URI.open('https://avatars1.githubusercontent.com/u/69615451?v=4')
+laranjeira.photo.attach(io: file, filename: 'laranjeira.jpg', content_type: 'image/jpg')
 
 User.create!(password: '123123', full_name: 'Joleno', username: 'joleno', country: 'Brazil', genre: 'male', email: 'joleno@teste.com')
 
