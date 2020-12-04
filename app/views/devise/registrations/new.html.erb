@@ -1,17 +1,4 @@
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId            : 'your-app-id',
-      autoLogAppEvents : true,
-      xfbml            : true,
-      version          : 'v9.0'
-    });
-  };
-</script>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
 
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v9.0&appId=3203118569792793&autoLogAppEvents=1" nonce="dT6FFyC1"></script>
 
 <div class="container">
   <h2>Sign up</h2>
@@ -69,7 +56,7 @@
 <div>
 <%= link_to "Voltar", root_path, class: 'btn btn-primary' %>
 
-<div class="fb-login-button" data-size="large" data-button-type="continue_with" data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="true" data-width=""></div>
+
 
  <%= render "devise/shared/links" %>
 </div>

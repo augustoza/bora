@@ -34,12 +34,14 @@ import { dynamicText } from "../components/banner";
 import { initMapbox } from '../plugins/init_mapbox';
 import { initCarousel } from "../components/slick";
 import { initSelect2 } from '../components/init_select2';
+import { initFacebook } from '../plugins/init_facebook';
 
 document.addEventListener('turbolinks:load', () => {
   initStarRating();
   initMapbox(),
   dynamicText();
   initSelect2();
+  initFacebook();
   // Call your functions here, e.g:
   initChatroomCable();
   initCarousel();
