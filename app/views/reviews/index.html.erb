@@ -1,6 +1,5 @@
 <div class="container">
   <h4>Avaliações de <%= @user.full_name %> </h4>
-  <% if @average_rating != nil %>
   <% @reviews.each do |review| %>
   <div class="each-rating">
     <p>Anônimo</p> 
@@ -12,7 +11,6 @@
     <% end  %>
     <%= review.content %>
   </div>
-  <% end %>
   <% end %>
 <%= link_to "Voltar", :back %>
 </div>
