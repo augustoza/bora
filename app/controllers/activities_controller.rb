@@ -1,5 +1,6 @@
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :edit, :update]
+  include Countries
 
   def index
     @activities = Activity.all
@@ -32,12 +33,17 @@ class ActivitiesController < ApplicationController
     end
     # @markers = [{lat: @activity.latitude, lng: @activity.longitude}]
     @chatroom = Chatroom.find_by(activity_id: @activity)
+    @country_code = find_country_code
   end
 
   def exploration_user_finder
     Exploration.where(activity: @activity).map do |exploration|
       exploration.user
     end
+  end
+
+  def find_country_code
+    COUNTRIES.key(@activity.user.country.capitalize).to_s
   end
 
   def new
