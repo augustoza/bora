@@ -18,10 +18,10 @@
         <div class="col"><%= @activity.category %></div>
         <div class="w-100"></div>
         <div class="col">Início:</div>
-        <div class="col"><%= @activity.initial_date %></div>
+        <div class="col"><%= @hour[0] %>   <%= @date[0] %> </div>
         <div class="w-100"></div>
         <div class="col">Fim:</div>
-        <div class="col"><%= @activity.final_date %></div>
+        <div class="col"><%= @hour[1] %>   <%= @date[1] %> </div>
         <div class="w-100"></div>
         <div class="col">Criado por:</div>
         <div class="col"><%= link_to @activity.user.username, profile_path %>  <%= render 'shared/flag' %></div>

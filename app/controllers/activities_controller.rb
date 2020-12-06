@@ -1,6 +1,7 @@
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :edit, :update]
   include Countries
+  include Translator
 
   def index
     @activities = Activity.all
@@ -34,6 +35,19 @@ class ActivitiesController < ApplicationController
     # @markers = [{lat: @activity.latitude, lng: @activity.longitude}]
     @chatroom = Chatroom.find_by(activity_id: @activity)
     @country_code = find_country_code
+    @hour = [hour_formatter(@activity.initial_date), hour_formatter(@activity.final_date)]
+    @date = [date_formatter(@activity.initial_date), date_formatter(@activity.final_date)]
+
+  end
+
+  def hour_formatter(date)
+    date.strftime('%H:%M')
+  end
+
+  def date_formatter(date)
+    weekday = week_day(date.strftime('%A'))
+    month = mon(date.strftime('%B'))
+    "#{weekday} - #{date.strftime('%d')}/#{month}/#{date.strftime('%Y')}"
   end
 
   def exploration_user_finder
