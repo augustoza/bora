@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to profile_path(@user)
     else
-      flash[:alert] = "Algo de errado não está certo."
+      flash[:alert] = @review.errors.first[1]
       render :new
     end
   end
