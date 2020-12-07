@@ -16,9 +16,12 @@ class ActivitiesController < ApplicationController
     
     if params[:category]
       @activities = Activity.where(category: params[:category])
+    elsif params[:query].present?
+      @activities = Activity.where("location ILIKE ?", params[:query])
     else
       @activities = Activity.all
     end
+
   end
 
   def show
