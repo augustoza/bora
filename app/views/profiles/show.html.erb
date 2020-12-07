@@ -1,6 +1,6 @@
 <div class="container">
   <h1 class='Username-show'><%=@user.username%></h1>
-  <img src="<%= "https://lipis.github.io/flag-icon-css/flags/4x3/#{@country_code.downcase}.svg" %>" alt="country-flag" width="40" />
+  <%= render 'shared/flag', link: @country_code.downcase %>
 
     
     <div class='User-show'>
