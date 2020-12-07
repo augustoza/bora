@@ -32,6 +32,7 @@
         <% @exploration_act.each do |exploration| %>
           <div class="col">
           <%= link_to exploration.username, profile_path(exploration.id) %>
+          <%= render 'shared/flag', link: exploration.country_code.downcase %>
           </div>
         <% end %>
       </div>
