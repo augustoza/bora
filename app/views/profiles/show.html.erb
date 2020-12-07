@@ -1,22 +1,50 @@
-<div class="container">
-  <h1 class='Username-show'><%=@user.username%></h1>
-  <%= render 'shared/flag', link: @country_code.downcase %>
-
-    
-    <div class='User-show'>
-      Name: <%= @user.full_name %>
-      <br>
-      Gender: <%= @user.genre %>
-      <br>
-      Country: <%= @user.country %>
-      <br>
-      Location: <%= @user.location %>
-      <br>
-      About: <%= @user.about %>
+<!-- PAGE HEADER -->
+  <header id="page-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 m-auto text-center">
+          <h1><%= @user.username %> </h1>
+          <p><%= @user.country %> <%= render 'shared/flag', link: @country_code.downcase %> </p>
+        </div>
+      </div>
     </div>
-      
+  </header>
 
-  <br>
+  <!-- ABOUT SECTION -->
+  <section id="about" class="py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h4>Quem sou eu</h4>
+            <div class='User-show'>
+              <p> 
+                Nome: <%= @user.full_name %>
+                <br>
+                Genêro: <%= @user.genre %>
+                <br>
+                Onde estou agora: <%= @user.location %>
+                <br>
+              </p>
+              <br>
+              <h4>Mais sobre mim:</h4>
+                <p>
+                  <%= @user.about %>
+                </p>
+            </div> 
+        </div>
+        <div class="col-md-6">
+          <% if current_user.facebook_picture_url %>
+          <%= image_tag current_user.facebook_picture_url, class: "img-fluid rounded-circle d-none d-md-block about-img" %>
+            <% elsif current_user.photo.attached? %>
+              <%= cl_image_tag current_user.photo.key, class: "img-fluid rounded-circle d-none d-md-block about-img" %>
+            <% else %>
+              <%= image_tag "https://www.dovercourt.org/wp-content/uploads/2019/11/610-6104451_image-placeholder-png-user-profile-placeholder-image-png-286x300.jpg", class: "img-fluid rounded-circle d-none d-md-block about-img" %>
+          <% end %>
+      </div>
+    </div>
+  </section>
+
+ <br>
   <br>
   <%= link_to "Avaliar este usuário", new_profile_review_path(@user) %>
   <div id="review_rating">
@@ -40,4 +68,3 @@
    <br>
   <%= link_to "Voltar", :back %>
 </div>
-
