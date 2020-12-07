@@ -18,13 +18,22 @@
         <div class="col"><%= @activity.category %></div>
         <div class="w-100"></div>
         <div class="col">Início:</div>
-        <div class="col"><%= @activity.initial_date %></div>
+        <div class="col"><%= @hour[0] + ' - '%><%= @date[0] %> </div>
         <div class="w-100"></div>
         <div class="col">Fim:</div>
-        <div class="col"><%= @activity.final_date %></div>
+        <div class="col"><%= @hour[1] + ' - '%>   <%= @date[1] %> </div>
         <div class="w-100"></div>
         <div class="col">Criado por:</div>
-        <div class="col"><%= link_to @activity.user.username, profile_path %></div>
+        <div class="col"><%= link_to @activity.user.username, profile_path(@activity.user) %>  <%= render 'shared/flag', link: @country_code.downcase %></div>
+        <div class="w-100"></div>
+        <br>
+        <div class="col">Membros participantes:</div>
+        <div class="col"></div>
+        <% @exploration_act.each do |exploration| %>
+          <div class="col">
+          <%= link_to exploration.username, profile_path(exploration.id) %>
+          </div>
+        <% end %>
       </div>
     </div>
 <br>
@@ -35,22 +44,20 @@
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
 
+  <div class="bottom-buttons">
+    <% unless @exploration_act.include?(current_user) %>
+      <%= simple_form_for [ @activity, @exploration ] do |f| %>
+        <%= f.submit "Join this activity", class: "btn btn-primary" %>
+      <% end %>
+    <% end %>
 
-<% unless @exploration_act.include?(current_user) %>
-  <%= simple_form_for [ @activity, @exploration ] do |f| %>
-    <%= f.submit "Join this activity", class: "btn btn-primary" %>
-  <% end %>
-<% end %>
+    <% if @exploration_act.include?(current_user) %>
+      <%= link_to "Go to chat!", chatroom_path(@chatroom), class: "btn btn-primary" %>
+    <% end %>
 
-<% @exploration_act.each do |exploration| %>
-  <%= exploration.username %>
-<% end %>
+    <%= link_to "voltar", activities_path, class: "btn btn-primary"  %>
+  </div>
 
-<%= link_to "voltar", activities_path, class: "btn btn-primary"  %>
-<br>
-<% if @exploration_act.include?(current_user) %>
-  <%= link_to "Go to chat!", chatroom_path(@chatroom), class: "btn btn-primary" %>
-<% end %>
 </div>
 
 
