@@ -4,8 +4,10 @@
     <div class="container">
       <div class="form-inline ml-auto x1">
         <div class="field">
+        <input type="search" id="address" class="form-control" placeholder="In which city do you live?" />
+          <p>Selected: <strong id="address-value">none</strong></p>
           <%= form_tag activities_path, method: :get do %>
-          <%= text_field_tag :query, params[:query], class: "form-control", id:"#address"
+          <%= text_field_tag :query, params[:query], class: "form-control", id:"#address",
               placeholder: "Bora para onde?"%>
         </div>
         <%# submit_tag "Search", class: "btn btn-outline-light ml-1 my-sm-0" %>
@@ -18,3 +20,20 @@
       <%#= link_to "Sign in", new_user_session_path, class: "btn btn-success" %>
     </div>
   </div>
+<script src="https://cdn.jsdelivr.net/npm/places.js@1.19.0"></script>
+<script>
+(function() {
+  var placesAutocomplete = places({
+    appId: 'EXWFO1HSPR',
+    apiKey: 'b4753787093980ee5d50021bd93fdd08' ,
+    container: document.querySelector('#address')
+  });
+  var $address = document.querySelector('#address-value')
+  placesAutocomplete.on('change', function(e) {
+    $address.textContent = e.suggestion.value
+  });
+  placesAutocomplete.on('clear', function() {
+    $address.textContent = 'none';
+  });
+})();
+</script>
