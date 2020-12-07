@@ -7,6 +7,16 @@ const initCarousel = () => {
     slidesToShow: 3,
     slidesToScroll: 3
   });
+
+  // $('.particip-carousel').slick({
+  //   infinite: true,
+  //   slidesToShow: 2,
+  //   slidesToScroll: 3
+  // });
+
+  $('.particip-carousel').slick({
+    dots:true
+  });
 };
 
 export { initCarousel };

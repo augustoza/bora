@@ -27,16 +27,25 @@
         <div class="col"><%= link_to @activity.user.username, profile_path(@activity.user) %>  <%= render 'shared/flag', link: @country_code.downcase %></div>
         <div class="w-100"></div>
         <br>
-        <div class="col">Membros participantes:</div>
-        <div class="col"></div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="car-title"><h3>Membros participantes:</h3></div>
+    <div class="car-wrapper">
+      <div class="particip-carousel">
         <% @exploration_act.each do |exploration| %>
-          <div class="col">
-          <%= link_to exploration.username, profile_path(exploration.id) %>
-          <%= render 'shared/flag', link: exploration.country_code.downcase %>
-          </div>
+          <%= link_to profile_path(exploration.id) do %>
+            <div class="a-flags" style="background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url(<%="https://lipis.github.io/flag-icon-css/flags/4x3/#{exploration.country_code.downcase}.svg"%>)">
+              <p><%= exploration.username %></p>
+            </div>
+          <% end %>
         <% end %>
       </div>
     </div>
+
 <br>
   <div>
     <div id="map"
