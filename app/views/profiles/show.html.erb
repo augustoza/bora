@@ -73,7 +73,12 @@
                 <p class="mb-0">
                   <%= review.content %>
                 </p>
-                <footer class="blockquote-footer"> <%= review.user.username %>
+                <footer class="blockquote-footer"> <%= review.user.username %> <% review.rating.times do %>
+      <i class="fas fa-star"></i>
+    <% end %>  
+    <% (5 - review.rating).times do %>
+      <i class="far fa-star"></i>
+    <% end  %>
                   </i></cite>
                 </footer>
               </blockquote>
