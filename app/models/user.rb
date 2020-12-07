@@ -40,4 +40,8 @@ class User < ApplicationRecord
 
     return user
   end
+
+  def country_code
+    COUNTRIES.key(country.capitalize).to_s
+  end
 end

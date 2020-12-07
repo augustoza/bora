@@ -27,15 +27,39 @@
         <div class="col"><%= link_to @activity.user.username, profile_path(@activity.user) %>  <%= render 'shared/flag', link: @country_code.downcase %></div>
         <div class="w-100"></div>
         <br>
-        <div class="col">Membros participantes:</div>
-        <div class="col"></div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="car-title"><h3>Membros participantes:</h3></div>
+    <div class="car-wrapper">
+      <div class="particip-carousel">
         <% @exploration_act.each do |exploration| %>
-          <div class="col">
-          <%= link_to exploration.username, profile_path(exploration.id) %>
+          <%= link_to profile_path(exploration.id) do %>
+          <div class="card-cont">
+            <div class="card-pp">
+              <div class="a-flags" %>
+                <% if exploration.facebook_picture_url %>
+                  <%= image_tag exploration.facebook_picture_url, class: "avatar act-avagtar", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <% elsif exploration.photo.attached? %>
+                  <%= cl_image_tag exploration.photo.key, class: "avatar act-avatar", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+                <% else %>
+                  <%= image_tag "https://www.dovercourt.org/wp-content/uploads/2019/11/610-6104451_image-placeholder-png-user-profile-placeholder-image-png-286x300.jpg", class: "avatar act-avatar", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <% end %>
+                <br><br><br>
+                <p><%= exploration.username %></p>
+                <h5><%= exploration.about %></h5>
+                <%= image_tag "https://lipis.github.io/flag-icon-css/flags/4x3/#{exploration.country_code.downcase}.svg", class:"bot-flag" %>
+              </div>
+            </div>
           </div>
+          <% end %>
         <% end %>
       </div>
     </div>
+
 <br>
   <div>
     <div id="map"
@@ -47,12 +71,12 @@
   <div class="bottom-buttons">
     <% unless @exploration_act.include?(current_user) %>
       <%= simple_form_for [ @activity, @exploration ] do |f| %>
-        <%= f.submit "Join this activity", class: "btn btn-primary" %>
+        <%= f.submit "Participar dessa atividade", class: "btn btn-primary" %>
       <% end %>
     <% end %>
 
     <% if @exploration_act.include?(current_user) %>
-      <%= link_to "Go to chat!", chatroom_path(@chatroom), class: "btn btn-primary" %>
+      <%= link_to "Ir para o chat!", chatroom_path(@chatroom), class: "btn btn-primary" %>
     <% end %>
 
     <%= link_to "voltar", activities_path, class: "btn btn-primary"  %>
