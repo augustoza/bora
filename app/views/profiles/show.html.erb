@@ -86,23 +86,10 @@
           </div>
         </div>
       </div>
-
- <br>
-  <br>
-  <%= link_to "Avaliar este usuário", new_profile_review_path(@user) %>
-    <%= link_to "Ver reviews", profile_reviews_path(@user) %>
+  <%= link_to "Avaliar este usuário", new_profile_review_path(@user), class: "btn btn-outline-warning" %>
   </div>
-  <br>
-  <h5>Atividades</h5>
-  <% if @explorations != nil %>
-  <% @explorations.each do |exploration| %>
-    <%= exploration.activity.title %>
-  <% end %>
-  <% end %>
-   <br>
-  <%= link_to "Voltar", :back %>
 </div>
-
 
 <%= render "shared/showcarousel" %>
 <%= render "shared/footer" %>
+
