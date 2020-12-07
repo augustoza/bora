@@ -67,12 +67,21 @@
         <div class="col">
           <div class="slider">
             <div>
+              <% @reviews.each do |review| %>
               <blockquote class="blockquote">
                 <p class="mb-0">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, quaerat.
+                  <%= review.content %>
                 </p>
-                <footer class="blockquote-footer">John Doe From
-                  <cite title="Company 1">Company 1</cite>
+                <footer class="blockquote-footer"> <%= review.user.username %>
+                  <cite title="Company 1"> 
+                    <% review.rating.times do %>
+                      <i class="fas fa-star">
+                    <% end %>
+                    <% (5 - review.rating).times do %>
+                      <i class="far fa-star"></i>
+                    <% end  %>
+                  <% end %>
+                  </i></cite>
                 </footer>
               </blockquote>
             </div>
