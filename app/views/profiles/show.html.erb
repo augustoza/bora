@@ -61,7 +61,6 @@
           <i class="far fa-star"></i>
         <% end  %>
         <% end %>        
-      
       </h3>
       
       <div class="row text-center">
@@ -74,12 +73,12 @@
                   <%= review.content %>
                 </p>
                 <footer class="blockquote-footer"> <%= review.user.username %> <% review.rating.times do %>
-      <i class="fas fa-star"></i>
-    <% end %>  
-    <% (5 - review.rating).times do %>
-      <i class="far fa-star"></i>
-    <% end  %>
-                  </i></cite>
+                <i class="fas fa-star"></i>
+                <% end %>  
+                <% (5 - review.rating).times do %>
+                <i class="far fa-star"></i>
+                <% end  %>
+                </i></cite>
                 </footer>
               </blockquote>
             </div>
@@ -88,19 +87,9 @@
         </div>
       </div>
 
-     
  <br>
   <br>
   <%= link_to "Avaliar este usuário", new_profile_review_path(@user) %>
-  <div id="review_rating">
-    <% if @average_rating != nil %>
-    <% @average_rating.times do %>
-      <i class="fas fa-star"></i>
-    <% end  %>
-    <% (5 - @average_rating).times do %>
-      <i class="far fa-star"></i>
-    <% end  %>
-    <% end %>
     <%= link_to "Ver reviews", profile_reviews_path(@user) %>
   </div>
   <br>
