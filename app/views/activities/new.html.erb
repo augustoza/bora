@@ -16,11 +16,11 @@
             'Compras', 'Transporte', 'Esportes', 'Outros'], wrapper: :vertical_collection_inline, :label => "Categoria" %>
           <%= f.input :location, :label => "Local" %>
           <%= f.input :description, :label => "Descrição" %>
-          <%= f.input :initial_date, :label => "Data inicial" %>
-          <%= f.input :final_date, :label => "Data final" %>
+          <%= f.input :initial_date, as: :string, required: false, input_html: {class: "datepicker"}, :label => "Data inicial" %>
+          <%= f.input :final_date, as: :string, required: false, input_html: {class: "datepicker"}, :label => "Data final" %>
         </div>
         
-        <div class="form-actions btn btn-success">
+        <div class="form-actions btn btn-warning">
           <%= f.button :submit, "Adicionar" %>
         </div>
         

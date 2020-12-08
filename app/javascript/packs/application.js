@@ -35,6 +35,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { initCarousel } from "../components/slick";
 import { initSelect2 } from '../components/init_select2';
 import { initFacebook } from '../plugins/init_facebook';
+import "../plugins/flatpickr";
 
 document.addEventListener('turbolinks:load', () => {
   initStarRating();
