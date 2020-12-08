@@ -14,16 +14,18 @@
   width: 1200px;
   // height: 225px;
   a {
+    outline: none;
     &:hover {
       text-decoration: none;
+      outline: none;
     }
   }
 }
 
-.car-wrapper {
-  display: flex;
-  justify-content: space-around;
-}
+// .car-wrapper {
+//   display: flex;
+//   justify-content: space-around;
+// }
 
 .car-title {
   display: flex;
