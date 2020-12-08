@@ -35,6 +35,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { initCarousel } from "../components/slick";
 import { initSelect2 } from '../components/init_select2';
 import { initFacebook } from '../plugins/init_facebook';
+import { flatpicker } from "../plugins/flatpickr";
 
 document.addEventListener('turbolinks:load', () => {
   initStarRating();
@@ -42,6 +43,7 @@ document.addEventListener('turbolinks:load', () => {
   dynamicText();
   initSelect2();
   initFacebook();
+  flatpicker();
   // Call your functions here, e.g:
   initChatroomCable();
   initCarousel();
