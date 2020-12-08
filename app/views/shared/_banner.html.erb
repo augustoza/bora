@@ -4,12 +4,13 @@
     <div class="container">
       <div class="form-inline ml-auto x1">
         <div class="field">
-        <input type="search" id="address" class="form-control" placeholder="Bora pra onde ?" />
-          <%= form_tag activities_path, method: :get do %>
-        </div>
+        <%= form_tag activities_path, method: :get do %>
+         <input type="search" id="address" class="form-control" placeholder="Bora pra onde ?" />
+        
         <%# submit_tag "Search", class: "btn btn-outline-light ml-1 my-sm-0" %>
         <% end %>
-    </div>
+        </div>
+      </div>
 <br>
       <h1>BORA! 
       <div id="bora">viajar</div>
