@@ -4,16 +4,6 @@ class ActivitiesController < ApplicationController
   include Translator
 
   def index
-    @activities = Activity.all
-
-    @markers = @activities.geocoded.map do |activity|
-      {
-        lat: activity.latitude,
-        lng: activity.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { activity: activity })
-      }
-    end
-    
     if params[:category]
       @activities = Activity.where(category: params[:category])
     elsif params[:query].present?
@@ -23,6 +13,13 @@ class ActivitiesController < ApplicationController
       @activities = Activity.all
     end
 
+    @markers = @activities.geocoded.map do |activity|
+      {
+        lat: activity.latitude,
+        lng: activity.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { activity: activity })
+      }
+    end
   end
 
   def show
