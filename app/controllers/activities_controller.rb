@@ -51,7 +51,7 @@ class ActivitiesController < ApplicationController
   def date_formatter(date)
     weekday = week_day(date.strftime('%A'))
     month = mon(date.strftime('%B'))
-    "#{weekday} - #{date.strftime('%d')}/#{month}/#{date.strftime('%Y')}"
+    "#{weekday} - #{date.strftime('%d')}/#{date.strftime('%m')}/#{date.strftime('%Y')}"
   end
 
   def exploration_user_finder
@@ -73,7 +73,6 @@ class ActivitiesController < ApplicationController
     @activity.user = current_user
     @exploration = Exploration.new
     @chatroom = Chatroom.new
-    @chatroom.activity = @activity
 
     if @activity.save
       redirect_to activity_path(@activity), notice: "Activity created"

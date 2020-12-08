@@ -14,21 +14,18 @@
   width: 1200px;
   // height: 225px;
   a {
+    outline: none;
     &:hover {
       text-decoration: none;
+      outline: none;
     }
   }
-}
-
-.car-wrapper {
-  display: flex;
-  justify-content: space-around;
 }
 
 .car-title {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 
 .card-cont {
@@ -49,6 +46,8 @@
     color: black;
     font-size: 32px;
     text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
   }
   &:hover {
     background-color: #ff446d7e;
@@ -59,6 +58,13 @@
   h5 {
     color: rgba(0, 0, 0, 0.582);
     text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;  
   }
 }
 
