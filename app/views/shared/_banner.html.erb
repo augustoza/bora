@@ -6,7 +6,7 @@
         <div class="field">
           
         <%= form_tag activities_path, method: :get do %>
-         <input type="search" id="address" class="form-control w-100 p-4 inputsearch" placeholder="🌎 Bora pra onde ?" />
+         <input name="query" type="text" id="address" class="form-control w-100 p-4 inputsearch" placeholder="🌎 Bora pra onde ?" />
 
         <%# submit_tag "Search", class: "btn btn-outline-light ml-1 my-sm-0" %>
         <% end %>
