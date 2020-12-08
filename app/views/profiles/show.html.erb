@@ -39,7 +39,7 @@
         </div>
         <div class="col-md-6">
             <% if @user.photo.attached? %>
-              <%= cl_image_tag @user.photo.key, class: "img-fluid rounded-circle d-none d-md-block about-img" %>
+              <%= cl_image_tag @user.photo.key, class: "img-fluid rounded-circle d-none d-md-block about-img w-50" %>
             <% else %>
               <%= image_tag "https://images.unsplash.com/photo-1511765392540-a4f3d816bfbb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80", class: "img-fluid rounded-circle d-none d-md-block about-img" %>
           <% end %>
