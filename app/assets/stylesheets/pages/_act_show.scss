@@ -9,3 +9,74 @@
     width: 800px;    
   }
 }
+
+.particip-carousel {
+  width: 1200px;
+  // height: 225px;
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.car-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.car-title {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 60px;
+}
+
+.card-cont {
+  height: 400px;
+  width: 260px;
+  margin-top: 40px;
+  position: relative;
+}
+
+.card-pp {
+  height: 400px;
+  width: 260px;
+  border-radius: 1px;
+  border-style: solid;
+  border-color: black;
+
+  p {
+    color: black;
+    font-size: 32px;
+    text-align: center;
+  }
+  &:hover {
+    background-color: #ff446d7e;
+    .avatar {
+      filter: none;
+    }
+  }
+  h5 {
+    color: rgba(0, 0, 0, 0.582);
+    text-align: center;
+  }
+}
+
+.a-flags {
+  .avatar {
+    width: 100px;
+  }
+}
+
+.act-avatar {
+  position: absolute;
+  top: -10%;
+  left: 30%;
+}
+
+.bot-flag {
+  width: 60px;
+  position: absolute;
+  bottom: 3%;
+  left: 37%;
+}

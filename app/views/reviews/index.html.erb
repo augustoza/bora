@@ -1,11 +1,11 @@
 <div class="container">
-  <h4>Avaliações de <%= @user.full_name %> </h4>
+  <h4>Avaliações de <%= @user.username %> </h4>
   <% @reviews.each do |review| %>
   <div class="each-rating">
     <p>Anônimo</p> 
     <% review.rating.times do %>
       <i class="fas fa-star"></i>
-    <% end  %>  
+    <% end %>  
     <% (5 - review.rating).times do %>
       <i class="far fa-star"></i>
     <% end  %>
