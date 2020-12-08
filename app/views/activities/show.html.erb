@@ -1,34 +1,8 @@
 <div class="container">
 
 
+<%= render 'grid' %>
 
-
-  <div class="activity-show-wrapper">
-  <h1 class="text-center"><%= @activity.title %></h1>
-<br>
-    <div class="container">
-      <div class="row ml-3">
-        <div class="col">Atividade:</div>
-        <div class="col"><%= @activity.title %></div>
-        <div class="w-100"></div>
-        <div class="col">Localização:</div>
-        <div class="col"><%= @activity.location %></div>
-        <div class="w-100"></div>
-        <div class="col">Categoria:</div>
-        <div class="col"><%= @activity.category %></div>
-        <div class="w-100"></div>
-        <div class="col">Início:</div>
-        <div class="col"><%= @hour[0] + ' - '%><%= @date[0] %> </div>
-        <div class="w-100"></div>
-        <div class="col">Fim:</div>
-        <div class="col"><%= @hour[1] + ' - '%>   <%= @date[1] %> </div>
-        <div class="w-100"></div>
-        <div class="col">Criado por:</div>
-        <div class="col"><%= link_to @activity.user.username, profile_path(@activity.user) %>  <%= render 'shared/flag', link: @country_code.downcase %></div>
-        <div class="w-100"></div>
-        <br>
-      </div>
-    </div>
     <br>
     <br>
     <br>

@@ -1,0 +1,60 @@
+        <% if @activity.category == 'Ao ar livre' %>
+          <% cat_font = "fas fa-hiking" %>
+        <% elsif @activity.category == 'Natureza' %>
+          <% cat_font = "fas fa-leaf" %>
+        <% elsif @activity.category == 'Aventura' %>
+          <% cat_font = "fas fa-snowboarding" %>
+        <% elsif @activity.category == 'Cultural' %>
+          <% cat_font = "fas fa-book-open" %>
+        <% elsif @activity.category == 'Festas' %>
+          <% cat_font = "fas fa-glass-cheers" %>
+        <% elsif @activity.category == 'Bares' %>
+          <% cat_font = "fas fa-beer" %>
+        <% elsif @activity.category == 'Shows' %>
+          <% cat_font = "fas fa-guitar" %>
+        <% elsif @activity.category == 'Gastronomia' %>
+          <% cat_font = "fas fa-hamburger" %>
+        <% elsif @activity.category == 'Compras' %>
+          <% cat_font = "fas fa-shopping-bag" %>
+        <% elsif @activity.category == 'Transporte' %>
+          <% cat_font = "fas fa-subway" %>
+        <% elsif @activity.category == 'Esportes' %>
+          <% cat_font = "fas fa-football-ball" %>
+        <% elsif @activity.category == 'Outros' %>
+          <% cat_font = "fas fa-biking" %>
+        <% end %>
+
+<div class="container">
+    <div class="row">
+        <div class="four col-md-4">
+            <div class="counter-box colored"> <i class="far fa-smile"></i> <span class="counter">Atividade:</span>
+                <p><%= @activity.title %></p>
+            </div>
+        </div>
+        <div class="four col-md-4">
+            <div class="counter-box colored"> <i class="fas fa-map-marker-alt"></i> <span class="counter">Localização:</span>
+                <p><%= @activity.location %></p>
+            </div>
+        </div>
+        <div class="four col-md-4">
+            <div class="counter-box colored"> <i class="<%= cat_font %>"></i> <span class="counter">Categoria:</span>
+                <p><%= @activity.category %></p>
+            </div>
+        </div>
+        <div class="four col-md-4">
+            <div class="counter-box colored"> <i class="far fa-clock"></i> <span class="counter">Início: <%= @hour[0] %></span>
+                <p><%= @date[0] %></p>
+            </div>
+        </div>
+        <div class="four col-md-4">
+            <div class="counter-box colored"> <i class="fas fa-clock"></i> <span class="counter">Fim: <%= @hour[1] %></span>
+                <p><%= @date[1] %></p>
+            </div>
+        </div>
+        <div class="four col-md-4">
+            <div class="counter-box colored"> <i class="fa fa-user"></i> <span class="counter">Criado por:</span>
+                <p><%= @activity.user.username + " - "%><%= link_to "Ver perfil", profile_path(@activity.user), class: "prf-link" %> </p>
+            </div>
+        </div>
+    </div>
+</div>
