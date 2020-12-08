@@ -1,6 +1,15 @@
 <div class="container">
 
-  <h1>List of activities:</h1>
+  <h1>Bora?</h1>
+
+  <div class="card-activity">
+      <%= cl_image_tag('https://res.cloudinary.com/dhehnzh5i/image/upload/v1607033910/bike_v0f0k8.jpg', :size => "250x250", :crop => :fill, class: "activity-pic") %>
+      <div class="card-activity-infos">
+        <div>
+          <h5>Passeio de bike</h5>
+        </div>
+      </div>
+    </div>
 
   <div class="activities-wrapper">
     <% @activities.each do |activity| %>
