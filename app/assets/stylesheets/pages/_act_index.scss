@@ -2,9 +2,13 @@
   overflow: hidden;
   height: 120px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
+
+  &:hover {
+    background: #FF446B;
+  }
 }
 
 .card-product h2 {
@@ -39,4 +43,12 @@
   display: flex;
   justify-content: center;
   margin: 20px 0px;
+}
+
+.activity-card {
+  color: black;
+}
+
+.activities-card:hover {
+  text-decoration: none;
 }
