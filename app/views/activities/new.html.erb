@@ -1,7 +1,9 @@
 <div class="container">
+    <div class="new-title">
       <h3>Adicione uma nova atividade </h3>
-  <div class="row">
-    <div class="col-sm-12 col-lg-8">
+    </div>
+  <div class="row new-activity">
+    <div class="col-sm-12 col-lg-6">
 
       <div class='form-content'>
       <%= simple_form_for(@activity) do |f| %>
@@ -16,14 +18,20 @@
             'Compras', 'Transporte', 'Esportes', 'Outros'], wrapper: :vertical_collection_inline, :label => "Categoria" %>
           <%= f.input :location, :label => "Local" %>
           <%= f.input :description, :label => "Descrição" %>
-          <%= f.input :initial_date, as: :string, required: false, input_html: {class: "datepicker"}, :label => "Data inicial" %>
-          <%= f.input :final_date, as: :string, required: false, input_html: {class: "datepicker"}, :label => "Data final" %>
+          <div class='form-inline'>
+          <div class="calendario">
+          <%= f.input :initial_date, as: :string, required: false, input_html: {class: "datepicker"}, :label => false, :placeholder => "Data inicial" %>
+          </div>
+          <div class="calendario">
+          <%= f.input :final_date, as: :string, required: false, input_html: {class: "datepicker"}, :label => false, :placeholder => "Data final" %>
+          </div>
+          </div>
         </div>
-        
-        <div class="form-actions btn btn-warning">
-          <%= f.button :submit, "Adicionar" %>
-        </div>
-        
+        <br>
+          <div class="btn-new">
+          <%= f.button :submit, "Adicionar", class: "btn btn-warning" %>
+          </div>
+      
         </div>
       <% end %>
 

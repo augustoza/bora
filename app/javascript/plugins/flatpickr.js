@@ -1,3 +1,7 @@
 import flatpickr from "flatpickr";
 
-flatpickr(".datepicker", {enableTime: true,});
+const flatpicker = () => { 
+  flatpickr(".datepicker", {enableTime: true,});
+}
+
+export { flatpicker };
