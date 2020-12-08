@@ -1,10 +1,10 @@
 
 
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/random/700x700/?travel);">
-    <div class="container">
-      <div class="form-inline ml-auto x1">
+    <div class="container-banner">
+      <div class="form-inline x1">
         <div class="field">
-        <input type="search" id="address" class="form-control" placeholder="Bora pra onde ?" />
+        <input type="search" id="address" class="form-control w-100 p-4 inputsearch" placeholder="🌎 Bora pra onde ?"/>
           <%= form_tag activities_path, method: :get do %>
         </div>
         <%# submit_tag "Search", class: "btn btn-outline-light ml-1 my-sm-0" %>

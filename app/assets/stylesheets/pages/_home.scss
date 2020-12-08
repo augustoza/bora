@@ -1,1 +1,16 @@
 // Specific CSS for your home-page
+.inputsearch {
+  max-width: 450px !important;
+  width: 50vh !important;
+  border-radius: 20px;
+  margin-left: none;
+}
+
+.container-banner {
+  display: flex;
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
