@@ -17,7 +17,7 @@
            'Natureza', 'Aventura', 'Cultural', 'Festas', 'Bares', 'Shows', 'Gastronomia',
             'Compras', 'Transporte', 'Esportes', 'Outros'], wrapper: :vertical_collection_inline, :label => "Categoria" %>
           <%= f.input :location, :label => "Onde vai ser?" %>
-          <%= f.input :description, :label => "Coloque uma breve descrição" %>
+          <%= f.input :description, :label => "Uma breve descrição" %>
           <div class='form-inline'>
           <div class="calendario">
           <%= f.input :initial_date, as: :string, required: false, input_html: {class: "datepicker"}, :label => false, :placeholder => "Data inicial" %>

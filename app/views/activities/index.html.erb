@@ -2,21 +2,14 @@
 
   <h1>Bora?</h1>
 
-  <div class="card-activity">
-      <%= image_tag('https://source.unsplash.com/random/700x700/?nature)', :size => "250x250", :crop => :fill, class: "activity-pic") %>
-      <div class="card-activity-infos">
-        <div>
-          <h5>Passeio de bike</h5>
-        </div>
-      </div>
-    </div>
-
-  <div class="activities-wrapper">
+  <div class="card-product">
+    <%= cl_image_tag('https://res.cloudinary.com/dhehnzh5i/image/upload/v1607449724/camera-removebg-preview_gdg6dm.png', :size => "100x100", :crop => :fill) %>
+    <div class="card-product-infos">
     <% @activities.each do |activity| %>
       <%= link_to activity_path(activity), class: 'activities-card', :action => 'go' do %>
         <div class="activity-card">
-          <%= activity.title %>
-          <%= activity.location %>
+          <h5><%= activity.title %></h5>
+          <p><%= activity.location %></p>
           <%= activity.initial_date %>
           <%= activity.final_date %>
           <% activity.latitude %><% activity.longitude %>
@@ -24,6 +17,13 @@
         </div>
       <% end %>
     <% end %>
+  </div>
+</div>
+
+  
+
+  <div class="activities-wrapper">
+    
     <%= link_to "Adicionar uma atividade", new_activity_path %>
   </div>
 
