@@ -1,11 +1,15 @@
 <div class="container">
-
-    <h3>Bora!</h3>
+  <div class="index-title">
+    <h1>Bora!</h1>
+  </div>
       
       <div class="index-cards">
         <% @activities.each do |activity| %>
           <div class="card-product">
-              <%= cl_image_tag('https://res.cloudinary.com/dhehnzh5i/image/upload/v1607449724/bussola-removebg-preview_y3t4oz.png', :size => "100x100", :crop => :fill) %>
+            <% icones = ['https://res.cloudinary.com/dhehnzh5i/image/upload/v1607449724/camera-removebg-preview_gdg6dm.png',
+                          'https://res.cloudinary.com/dhehnzh5i/image/upload/v1607449724/bussola-removebg-preview_y3t4oz.png',
+                          'https://res.cloudinary.com/dhehnzh5i/image/upload/v1607449724/pin-removebg-preview_fkvczx.png'] %>
+              <%= cl_image_tag(icones.sample, :size => "70x70", :crop => :fill) %>
             <div class="card-product-infos">
               <%= link_to activity_path(activity), class: 'activities-card', :action => 'go' do %>
                 <div class="activity-card">
