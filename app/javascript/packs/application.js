@@ -7,7 +7,8 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-
+require('algoliasearch');
+require('places.js');
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -35,15 +36,19 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { initCarousel } from "../components/slick";
 import { initSelect2 } from '../components/init_select2';
 import { initFacebook } from '../plugins/init_facebook';
+import { initAutocomplete} from '../components/search';
+import { flatpicker } from "../plugins/flatpickr";
 
 document.addEventListener('turbolinks:load', () => {
   initStarRating();
-  initMapbox(),
+  initMapbox();
   dynamicText();
   initSelect2();
   initFacebook();
+  flatpicker();
   // Call your functions here, e.g:
   initChatroomCable();
   initCarousel();
+  initAutocomplete() ;
 });
 //TODO ----- SELECT2 COUNTRIES

@@ -8,6 +8,12 @@ const initCarousel = () => {
     slidesToScroll: 3
   });
 
+  $('.slider').slick({
+    infinite: true,
+    slideToShow: 1,
+    slideToScroll: 1
+  });
+
   // $('.particip-carousel').slick({
   //   infinite: true,
   //   slidesToShow: 2,
