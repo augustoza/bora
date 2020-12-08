@@ -20,20 +20,3 @@
       <%#= link_to "Sign in", new_user_session_path, class: "btn btn-success" %>
     </div>
   </div>
-<script src="https://cdn.jsdelivr.net/npm/places.js@1.19.0"></script>
-<script>
-(function() {
-  var placesAutocomplete = places({
-    appId: 'EXWFO1HSPR',
-    apiKey: 'b4753787093980ee5d50021bd93fdd08' ,
-    container: document.querySelector('#address')
-  });
-  var $address = document.querySelector('#address-value')
-  placesAutocomplete.on('change', function(e) {
-    $address.textContent = e.suggestion.value
-  });
-  placesAutocomplete.on('clear', function() {
-    $address.textContent = 'none';
-  });
-})();
-</script>

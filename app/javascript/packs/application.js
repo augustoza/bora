@@ -36,7 +36,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { initCarousel } from "../components/slick";
 import { initSelect2 } from '../components/init_select2';
 import { initFacebook } from '../plugins/init_facebook';
-//import { autocomplete } from '../components/search';
+import { initAutocomplete} from '../components/search';
 
 document.addEventListener('turbolinks:load', () => {
   initStarRating();
@@ -47,6 +47,6 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initChatroomCable();
   initCarousel();
- // autocomplete();
+  initAutocomplete() ;
 });
 //TODO ----- SELECT2 COUNTRIES
