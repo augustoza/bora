@@ -49,6 +49,6 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initChatroomCable();
   initCarousel();
-  initAutocomplete() ;
+  initAutocomplete();
 });
 //TODO ----- SELECT2 COUNTRIES
