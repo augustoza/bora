@@ -1,15 +1,24 @@
-<h1>Profiles#edit</h1>
-<p>Find me in app/views/profiles/edit.html.erb</p>
-
-<div class="container">
-  <div class="edit-profile">
-    <%= simple_form_for @user, url: profile_path, method: 'patch'  do |f| %>
-      <%= f.input :full_name, placeholder:'FullName', label: false %>
-      <%= f.input :country, placeholder:'Country', label: false, collection: User::LIST_OF_COUNTRIES %>
-      <%= f.input :genre, prompt: 'Gender', label: false, collection: User::GENRES %>
-      <%=f.input :username, placeholder:'Username',label: false %>
-      <%= f.input :photo, as: :file %>
-      <%= f.submit 'Save changes', class: 'btn btn-warning' %>
-    <% end %>
+<div class="container edit-content">
+  <div class="edit-title">
+    <h1>Altere seu perfil</h1>
   </div>
+
+    <div class="row edit-form">
+      <div class="col-sm-12 col-lg-6">
+        <div class="edit-profile">
+          <%= simple_form_for @user, url: profile_path, method: 'patch'  do |f| %>
+            <%= f.input :full_name, label: 'Full name:', placeholder:'FullName' %>
+            <%= f.input :about, placeholder: 'About', label: 'About me:' %>
+            <%= f.input :country, placeholder:'Country', label: 'Country:', collection: User::LIST_OF_COUNTRIES %>
+            <%= f.input :genre, prompt: 'Gender', label: 'Gender:', collection: User::GENRES %>
+            <%= f.input :username, placeholder:'Username',label: 'Username:' %>
+            <%= f.input :photo, as: :file %>
+            <%= f.submit 'Salvar alterações', class: 'btn btn-warning' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
 </div>
+
+
+<%= render "shared/footer" %>

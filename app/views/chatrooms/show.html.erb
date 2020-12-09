@@ -1,14 +1,26 @@
-<%= @activity.title %>
+<div class="container">
+  <div class="row">
+<div class="chatroom-body">
+    <div class="col-lg-8">
+      <h2><%= @activity.title %></h2>
+      <h5>Chatroom</h5>
 
-<h1>Chatroom</h1>
-<div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-  <% @chatroom.messages.each do |message| %>
-    <%= render 'messages/message', message: message %>
-  <% end %>
+      <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+        <% @chatroom.messages.each do |message| %>
+          <%= render 'messages/message', message: message %>
+        <% end %>
+      </div>
+
+    <div class="text-field">
+      <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+        <%= f.input :content, label: false, placeholder: "Digite sua mensagem" %>
+      <% end %>
+    </div>
+      
+      <%= link_to "Retornar à atividade", activity_path(@activity) %>
+    </div>
+  </div>
+</div>
 </div>
 
-<%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-  <%= f.input :content, label: false, placeholder: "Message ID##{@chatroom.id}" %>
-<% end %>
-
-<%= link_to "Return to activity", activity_path(@activity) %>
+<%= render "shared/footer" %>
