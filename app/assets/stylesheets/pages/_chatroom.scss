@@ -1,0 +1,33 @@
+.sender {
+  background-color: #98DCC3;
+  padding: 5px;
+  border-radius: 50%;
+  width: fit-content;
+}
+
+.message-text {
+  background-color: #ff446db9;
+  width: fit-content;
+  padding: 5px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+    p {
+      margin-bottom: 0px;
+    }
+
+}
+
+.message-all {
+  display: flex;
+
+}
+
+.hora {
+  color: #5c5c5c;
+  font-size: 11px;
+}
+
+.chatroom-body {
+  margin-top: 20px;
+}
