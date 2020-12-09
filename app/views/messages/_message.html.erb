@@ -1,18 +1,44 @@
 <div class="message-container" id="message-<%= message.id %>">
-  <i class="author">
-  <div class="message-all">
-    <div class="sender">
-      <span> 
-        <% if message.user.photo.attached? %>
-          <%= cl_image_tag message.user.photo.key, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-        <% else %>
-          <%= image_tag "https://www.dovercourt.org/wp-content/uploads/2019/11/610-6104451_image-placeholder-png-user-profile-placeholder-image-png-286x300.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <% end %> </span>
-    </div>
-      </i>
-      <div class="message-text">
-        <p><%= message.content %></p>
-        <small class="hora"><%= message.created_at.strftime("%b %e at %l:%M%p") %></small>
+  <div class="row">
+    <div class="col-lg-12">
+    <% if message.user == current_user %>
+        <div class="message-all message-sender">
+          <div class="message-text">
+            <p><%= message.content %></p>
+            <small class="hora"><%= message.created_at.strftime("%b %e at %l:%M%p") %></small>
+          </div>
+      <i class="author">
+        <div class="sender">
+          <span> 
+            <% if message.user.photo.attached? %>
+              <%= cl_image_tag message.user.photo.key, class: "avatar dropdown-toggle avatar-chat", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+            <% else %>
+              <%= image_tag "https://www.dovercourt.org/wp-content/uploads/2019/11/610-6104451_image-placeholder-png-user-profile-placeholder-image-png-286x300.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% end %> </span>
+        </div>
+          </i>
+          
+          
       </div>
+    <% else %>
+        <div class="message-all">
+      <i class="author">
+        <div class="sender">
+          <span> 
+            <% if message.user.photo.attached? %>
+              <%= cl_image_tag message.user.photo.key, class: "avatar dropdown-toggle avatar-chat", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+            <% else %>
+              <%= image_tag "https://www.dovercourt.org/wp-content/uploads/2019/11/610-6104451_image-placeholder-png-user-profile-placeholder-image-png-286x300.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% end %> </span>
+        </div>
+          </i>
+          <div class="message-outro">
+            <p><%= message.content %></p>
+            <small class="hora"><%= message.created_at.strftime("%b %e at %l:%M%p") %></small>
+          </div>          
+      </div>
+    <% end %>
+      
+    </div>
   </div>
 </div>
