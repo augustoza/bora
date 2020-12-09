@@ -54,10 +54,10 @@
     <% end %>
 
     <% if @exploration_act.include?(current_user) %>
-      <%= link_to "Ir para o chat!", chatroom_path(@chatroom), class: "btn btn-primary" %>
+      <%= link_to "Ir para o chat!", chatroom_path(@chatroom), class: "btn btn-outline-warning" %>
     <% end %>
 
-    <%= link_to "voltar", activities_path, class: "btn btn-primary"  %>
+    <%= link_to "voltar", activities_path, class: "btn btn-outline-warning" %>
   </div>
 
 </div>
