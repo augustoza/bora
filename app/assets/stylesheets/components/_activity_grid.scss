@@ -21,6 +21,9 @@
 
 .four {
   margin-top: 25px;
+  &:hover {
+    opacity: 80%;
+  }
 }
 
 .prf-link {
@@ -36,6 +39,9 @@
   margin-bottom: 40px;
   margin-left: 40px;
   margin-right: 40px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 30px;
+  border-radius: 15px;
 }
 
 .counter {
