@@ -19,6 +19,7 @@
   margin-top: -50px; }
 .card-body {
   height: 350px;
+  position: relative;
 }
 .card-all {
   margin-top: 20px;
@@ -32,6 +33,13 @@
   #card-activity .card:hover .x1 {
     color: #fff; }
 
+.x1 {
+  position: absolute;
+  width: 150px;
+  left: 50%;
+  bottom: 5px;
+  transform: translate(-50%, -50%);
+}
 .carousel-category {
   border: solid 1px #ddd;
   padding: 10px;
