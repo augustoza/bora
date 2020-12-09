@@ -14,3 +14,11 @@
   justify-content: center;
   flex-direction: column;
 }
+
+#card-activity img {
+  margin-top: -50px; }
+#card-activity .card:hover {
+  background: $pink;
+  color: #fff; }
+#card-activity .fab {
+  color: #fff; }
