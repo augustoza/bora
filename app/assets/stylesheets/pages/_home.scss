@@ -16,13 +16,21 @@
 }
 
 #card-activity img {
-  margin-top: -50px; }
+  margin-top: -70px;
+  position: absolute;
+  max-width: 40%;
+  z-index: 10; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .card-body {
   height: 350px;
   position: relative;
+  padding-top: 30%;
 }
+
 .card-all {
-  margin-top: 20px;
+  margin-top: 50px;
   margin-bottom: 40px;
 }
 #card-activity .card:hover {
