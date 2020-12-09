@@ -4,6 +4,9 @@
     <% if message.user == current_user %>
         <div class="message-all message-sender">
           <div class="message-text">
+            <div class="sender-name">
+              <p><strong><%= message.user.username %></strong></p>
+            </div>
             <p><%= message.content %></p>
             <small class="hora"><%= message.created_at.strftime("%b %e at %l:%M%p") %></small>
           </div>
@@ -33,6 +36,7 @@
         </div>
           </i>
           <div class="message-outro">
+            <p><strong><%= message.user.username %></strong></p>
             <p><%= message.content %></p>
             <small class="hora"><%= message.created_at.strftime("%b %e at %l:%M%p") %></small>
           </div>          
