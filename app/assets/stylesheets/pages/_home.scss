@@ -17,6 +17,13 @@
 
 #card-activity img {
   margin-top: -50px; }
+.card-body {
+  height: 350px;
+}
+.card-all {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
 #card-activity .card:hover {
   background: #f63f6d7c;
   color: #fff; }
@@ -24,3 +31,8 @@
   color: #fff; }
   #card-activity .card:hover .x1 {
     color: #fff; }
+
+.carousel-category {
+  border: solid 1px #ddd;
+  padding: 10px;
+}
