@@ -18,7 +18,34 @@
           <div class="card-all w-100">
             <div class="card mx-1">
               <div class="card-body">
-                <img src="https://images.unsplash.com/photo-1592249503965-c3c7806f9074?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=801&q=80" alt="" class="img-fluid rounded-circle w-50 mb-3">
+                <% case activity.category %>
+                  <% when 'Ao ar livre'%>
+                  <%= image_tag('aoarlivre.png') %>
+                  <% when 'Natureza' %>
+                  <%= image_tag('natureza.png') %>
+                  <% when 'Aventura' %>
+                  <%= image_tag('aventura.png') %>
+                  <% when 'Cultural' %>
+                  <%= image_tag('cultural.png') %>
+                  <% when 'Festas' %>
+                  <%= image_tag('festas.png') %>
+                  <% when 'Bares' %>
+                  <%= image_tag('bares.png') %>
+                  <% when 'Shows' %>
+                  <%= image_tag('shows.png') %>
+                  <% when 'Gastronomia' %>
+                  <%= image_tag('gastronomia.png') %>
+                  <% when 'Compras' %>
+                  <%= image_tag('compras.png') %>
+                  <% when 'Transporte' %>
+                  <%= image_tag('transporte.png') %>
+                  <% when 'Esportes'%>
+                  <%= image_tag('esportes.png') %>
+                  <% when 'Outros'%>
+                  <%= image_tag('outros.png') %>
+                  <% else %>
+                  <img src="https://images.unsplash.com/photo-1592249503965-c3c7806f9074?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=801&q=80" alt="" class="img-fluid rounded-circle w-50 mb-3">
+                <% end %>
                 <h3><%= activity.title %></h3>
                 <h5 class="text-muted"><%= activity.location %></h5>
                 <p><%= activity.user.username %></p>
