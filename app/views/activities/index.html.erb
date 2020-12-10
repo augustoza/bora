@@ -7,10 +7,32 @@
         <% @activities.each do |activity| %>
           <%= link_to activity_path(activity), class: 'activities-card', :action => 'go' do %>
             <div class="card-product">
-              <% icones = ['https://res.cloudinary.com/dhehnzh5i/image/upload/v1607449724/camera-removebg-preview_gdg6dm.png',
-                            'https://res.cloudinary.com/dhehnzh5i/image/upload/v1607449724/bussola-removebg-preview_y3t4oz.png',
-                            'https://res.cloudinary.com/dhehnzh5i/image/upload/v1607449724/pin-removebg-preview_fkvczx.png'] %>
-                <%= cl_image_tag(icones.sample, :size => "70x70", :crop => :fill) %>
+              <% case activity.category %>
+                  <% when 'Ao ar livre'%>
+                  <%= image_tag('aoarlivre.png') %>
+                  <% when 'Natureza' %>
+                  <%= image_tag('natureza.png') %>
+                  <% when 'Aventura' %>
+                  <%= image_tag('aventura.png') %>
+                  <% when 'Cultural' %>
+                  <%= image_tag('cultural.png') %>
+                  <% when 'Festas' %>
+                  <%= image_tag('festas.png') %>
+                  <% when 'Bares' %>
+                  <%= image_tag('bares.png') %>
+                  <% when 'Shows' %>
+                  <%= image_tag('shows.png') %>
+                  <% when 'Gastronomia' %>
+                  <%= image_tag('gastronomia.png') %>
+                  <% when 'Compras' %>
+                  <%= image_tag('compras.png') %>
+                  <% when 'Transporte' %>
+                  <%= image_tag('transporte.png') %>
+                  <% when 'Esportes'%>
+                  <%= image_tag('esportes.png') %>
+                  <% when 'Outros'%>
+                  <%= image_tag('outros.png') %>
+                <% end %>
               <div class="card-product-infos">
                   <div class="activity-card">
                     <h5><%= activity.title %></h5>
