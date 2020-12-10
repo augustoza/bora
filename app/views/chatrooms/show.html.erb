@@ -16,10 +16,12 @@
       <div class="text-field">
         <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
           <%= f.input :content, label: false, placeholder: "Digite sua mensagem" %>
+          <%= f.submit "Enviar", class: 'btn btn-warning' %>
         <% end %>
       </div>
-      
-      <%= link_to "Retornar à atividade", activity_path(@activity) %>
+      <div class="link-chat">
+        <%= link_to "Retornar à atividade", activity_path(@activity) %>
+      </div>
     </div>
   </div>
 </div>
