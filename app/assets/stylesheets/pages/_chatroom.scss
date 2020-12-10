@@ -65,7 +65,12 @@
   display: flex;
   justify-content: center;
   padding: 20px 0px;
-  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.chatroom-title h4 {
+  margin: 0px;
 }
 
 .chat-back {
@@ -73,6 +78,7 @@
   height: 80vh;
   padding-top: 10px;
   border-radius: 3px;
+  overflow-y: scroll;
 }
 
 .link-chat {
