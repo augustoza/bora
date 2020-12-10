@@ -20,10 +20,13 @@
           Minhas Atividades
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
+        <% current_user.activities.each do |activity| %>
+        <%= link_to activity.title, activity_path(activity), class: "dropdown-item" %>
+        <% end %>
           <div class="dropdown-divider"></div>
+
           <a class="dropdown-item" href="#">Something else here</a>
+
         </div>
       </li>
 
@@ -34,7 +37,7 @@
           <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
         <% else %>
           <%= image_tag "https://www.dovercourt.org/wp-content/uploads/2019/11/610-6104451_image-placeholder-png-user-profile-placeholder-image-png-286x300.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <% end %>
+        <% raise end %>
 
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Meu perfil", profile_path(current_user.id), class: "dropdown-item" %>
