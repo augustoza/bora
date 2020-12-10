@@ -51,12 +51,23 @@
   margin-top: 20px;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .text-field {
   margin-top: 20px;
 }
 
-.sender-name {
-  display
+.chatroom-title {
+  background-color: #ff3153;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0px;
+  border-radius: 10px;
+}
+
+.chat-back {
+  background-color: #ffffff;
+  height: 80vh;
+  padding-top: 10px;
 }
