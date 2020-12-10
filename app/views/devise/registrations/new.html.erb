@@ -1,62 +1,30 @@
-
-
-<div class="container">
-  <h2>Sign up</h2>
-
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= f.error_notification %>
-
-    <div class="form-inputs">
-      <%= f.input :email,
-                  required: true,
-                  autofocus: true,
-                  placeholder: 'Email',
-                  label: false,
-                  input_html: { autocomplete: "email" }%>
-      <%= f.input :full_name,
-                  required: true,
-                  autofocus: true,
-                  placeholder: 'Full name',
-                  label: false,
-                  input_html: { autocomplete: "username" }%>
-      <%= f.input :username,
-                  required: true,
-                  autofocus: true,
-                  placeholder: 'Username',
-                  label: false,
-                  input_html: { autocomplete: "username" }%>
-      <%= f.input :genre, 
-                  prompt: 'Gender',
-                  label: false,
-                  collection: User::GENRES %>
-      <%= f.input :country, 
-                  prompt: 'Country',
-                  label: false,
-                  input_html: { class: 'select2' },
-                  collection: User::LIST_OF_COUNTRIES %>
-      <%= f.input :password,
-                  required: true,
-                  placeholder: 'Password',
-                  label: false,
-                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+  
+<div class="form-login">
+      <h2>Sign up</h2>
+       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
+      <div class="form-inputs">
+       <%= f.input :email, required: true, autofocus: true,placeholder: 'Email', label: false, input_html: { autocomplete: "email" }%>
+      <%= f.input :full_name, required: true, autofocus: true, placeholder: 'Full name', label: false, input_html: { autocomplete: "username" }%>
+      <%= f.input :username, required: true, autofocus: true, placeholder: 'Username', label: false, input_html: { autocomplete: "username" }%>
+      <%= f.input :genre, prompt: 'Gender',label: false, collection: User::GENRES %>
+      <%= f.input :country, prompt: 'Country',label: false,input_html: { class: 'select2' },collection: User::LIST_OF_COUNTRIES %>
+      <%= f.input :password,required: true,placeholder: 'Password', label: false,
+hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                   input_html: { autocomplete: "new-password" } %>
-      <%= f.input :password_confirmation,
-                  required: true,
-                  placeholder: 'Confirm your password',
-                  label: false,
-                  input_html: { autocomplete: "new-password" } %>
+      <%= f.input :password_confirmation, required: true, placeholder: 'Confirm your password', label: false, input_html: { autocomplete: "new-password" } %>
       <%= f.input :photo, as: :file %>
       </div>
+      <div class="form-actions">
+        <%= f.button :submit, "Sign Up", class: "btn btn-primary"%>
+      </div>
+    <% end %>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Registrar", class: 'btn btn-primary' %>
-  </div>
-<% end %>
+<%= render "devise/shared/continuefb" %>
 
-<div>
-<%= link_to "Voltar", root_path, class: 'btn btn-primary' %>
+<%# FACEBOOK SIGN IN %>
+<%# <div class="fb-login-button" data-size="large" data-button-type="continue_with" data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="true" data-width=""></div> %>
 
+  <%= render "devise/shared/links" %>
 
-
- <%= render "devise/shared/links" %>
 </div>
