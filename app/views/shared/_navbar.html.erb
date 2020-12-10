@@ -11,24 +11,20 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-       <li class="nav-item">
-          <%= link_to "Criar Atividade", new_activity_path, class: "nav-link warning" %>
-        </li>
-
         <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Minhas Atividades
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <% current_user.activities.each do |activity| %>
-        <%= link_to activity.title, activity_path(activity), class: "dropdown-item" %>
+        <% current_user.explorations.each do |exploration| %>
+          <%= link_to exploration.activity.title, activity_path(exploration), class: "dropdown-item" %>
         <% end %>
-          <div class="dropdown-divider"></div>
-
-          <a class="dropdown-item" href="#">Something else here</a>
-
         </div>
       </li>
+
+       <li class="nav-item">
+          <%= link_to "Criar Atividade", new_activity_path, class: "nav-link warning" %>
+        </li>
 
         <li class="nav-item dropdown">
         <% if current_user.facebook_picture_url %>
