@@ -43,20 +43,38 @@
 }
 
 .hora {
-  color: #5c5c5c;
+  color: #808080;
   font-size: 11px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .chatroom-body {
   margin-top: 20px;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .text-field {
   margin-top: 20px;
 }
 
-.sender-name {
+.chatroom-title {
+  background-color: #F41A51;
   display: flex;
+  justify-content: center;
+  padding: 20px 0px;
+  border-radius: 10px;
+}
+
+.chat-back {
+  background-color: #ffffff;
+  height: 80vh;
+  padding-top: 10px;
+  border-radius: 3px;
+}
+
+.link-chat {
+  margin: 20px 0px;
 }
