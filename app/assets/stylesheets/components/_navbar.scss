@@ -4,6 +4,7 @@
   border-bottom: $pink 2px solid;
   opacity: 0.9;
   z-index: 1;
+  color: #54d3a4;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -12,4 +13,11 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.nav-link {
+  color: $pink;
+  &:hover {
+    color: #54d3a4;
+  }
 }
