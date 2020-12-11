@@ -69,6 +69,10 @@ const initChatroomCable = () => {
         const message = parseInt(currentUserID) === data.user_id ? createSenderMessage(data) : createReceiverMessage(data);
         console.log(data); // called when data is broadcast in the cable
         messagesContainer.insertAdjacentHTML('beforeend', message);
+        window.setInterval(function() {
+          var elem = document.querySelector(".chat-back");
+          elem.scrollTop = elem.scrollHeight;
+        }, 5000);
       },
     });
   }
