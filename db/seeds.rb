@@ -1,10 +1,6 @@
 require 'date'
 require 'open-uri'
 
-#TODO------------------------------------
-#TODO -----------> USERS <---------------
-#TODO------------------------------------
-
 diego = User.create!(password: '123abc', full_name: 'Diego Correa', username: 'Diego', about: 'Quero conhecer o mundo e ficar rico com o Piggy Bank', country: 'Brazil', genre: 'male', email: 'diego@teste.com')
 file = URI.open('https://avatars2.githubusercontent.com/u/71459501?v=4')
 diego.photo.attach(io: file, filename: 'diego.jpg', content_type: 'image/jpg')
@@ -53,7 +49,7 @@ afonso = User.create!(password: '123abc', full_name: 'Afonso Augusto', username:
 file = URI.open('https://avatars2.githubusercontent.com/u/66492757?v=4')
 afonso.photo.attach(io: file, filename: 'afonso.jpg', content_type: 'image/jpg')
 
-matheus = User.create!(password: '123abc', full_name: 'Matheus Kaiser', about: 'A cerveja que desce quadrada ', username: 'Matheus', country: 'Australia', genre: 'male', email: 'matheus@teste.com')
+matheus = User.create!(password: '123abc', full_name: 'Matheus Kaiser', about: 'A cerveja que desce quadrada. Mãe to na tv', username: 'Matheus', country: 'Australia', genre: 'male', email: 'matheus@teste.com')
 file = URI.open('https://avatars1.githubusercontent.com/u/70783827?v=4')
 matheus.photo.attach(io: file, filename: 'matheus.jpg', content_type: 'image/jpg')
 
@@ -61,58 +57,55 @@ thiago = User.create!(password: '123abc', full_name: 'Thiago AV', about: 'Lutado
 file = URI.open('https://s1.imghub.io/afoSM.jpg')
 thiago.photo.attach(io: file, filename: 'thiago.jpg', content_type: 'image/jpg')
 
-#TODO------------------------------------
-#TODO---------> ACTIVITIES <-------------
-#TODO------------------------------------
+
 
 finaldate = (DateTime.now +99)
 CATEGORIES = ['Ao ar livre', 'Natureza', 'Aventura', 'Cultural', 'Festas', 'Bares', 'Shows', 'Gastronomia', 'Compras', 'Transporte', 'Esportes']
 
-activity_1 = Activity.create!(category: 'Cultural', user_id: 1, title: 'Conhecer o MASP', description: 'Bora conhecer esse museu, curtir uma manhã e tarde inteira lá!', initial_date: DateTime.now, final_date: finaldate, location: 'MASP, São Paulo')
+activity_1 = Activity.create!(category: 'Cultural', user: augusto, title: 'Conhecer o MASP', description: 'Bora conhecer esse museu, curtir uma manhã e tarde inteira lá!', initial_date: DateTime.now, final_date: finaldate, location: 'MASP, São Paulo')
 Chatroom.create!(activity_id: activity_1.id)
-Exploration.create!(activity_id: activity_1.id, user_id: 1)
+Exploration.create!(activity_id: activity_1.id, user: augusto)
 
-activity_2 = Activity.create!(category: 'Festas', user_id: 2, title: 'Party hard', description: 'Vamos curtir todas as festas possíveis em uma noite só, tipo pubcrawl!', initial_date: DateTime.now, final_date: finaldate, location: 'Paris')
+activity_2 = Activity.create!(category: 'Festas', user: renata, title: 'Party hard', description: 'Vamos curtir todas as festas possíveis em uma noite só, tipo pubcrawl!', initial_date: DateTime.now, final_date: finaldate, location: 'Paris')
 Chatroom.create!(activity_id: activity_2.id)
-Exploration.create!(activity_id: activity_2.id, user_id: 2)
+Exploration.create!(activity_id: activity_2.id, user: renata)
 
-activity_3 = Activity.create!(category: 'Shows', user_id: 3, title: 'Suquita Music Festival', description: 'Bora curtir o maior festival de música da cidade de São Paulo. Line up: Lifetime Code, Nicolas Enne, Barões da Pisadinha, Ratos de Porão, MC Bochecha, Calypso, Iron Maiden, Sepultura, Carlinhos Brown, Velhas Virgens, Luísa Sonsa, Jon Bovi, Chitãozinho e Chororó, Racionais MC', initial_date: DateTime.now, final_date: finaldate, location: 'Estádio Morumbi, São Paulo')
+activity_3 = Activity.create!(category: 'Shows', user: beatriz, title: 'Suquita Music Festival', description: 'Bora curtir o maior festival de música da cidade de São Paulo. Line up: Lifetime Code, Nicolas Enne, Barões da Pisadinha, Ratos de Porão, MC Bochecha, Calypso, Iron Maiden, Sepultura, Carlinhos Brown, Velhas Virgens, Luísa Sonsa, Jon Bovi, Chitãozinho e Chororó, Racionais MC', initial_date: DateTime.now, final_date: finaldate, location: 'Estádio Morumbi, São Paulo')
 Chatroom.create!(activity_id: activity_3.id)
-Exploration.create!(activity_id: activity_3.id, user_id: 3)
+Exploration.create!(activity_id: activity_3.id, user: beatriz)
 
-activity_4 = Activity.create!(category: 'Gastronomia', user_id: 4, title: 'Jantar no Vintão', initial_date: DateTime.now, final_date: finaldate, location: 'Faria Lima, São Paulo')
+activity_4 = Activity.create!(category: 'Gastronomia', user: mark, title: 'Jantar no Vintão', initial_date: DateTime.now, final_date: finaldate, location: 'Faria Lima, São Paulo')
 Chatroom.create!(activity_id: activity_4.id)
-Exploration.create!(activity_id: activity_4.id, user_id: 4)
+Exploration.create!(activity_id: activity_4.id, user: mark)
 
-activity_5 = Activity.create!(category: 'Bares', user_id: 6, title: 'Metal no Fofinho', initial_date: DateTime.now, final_date: finaldate, location: 'Rua Augusta, 1415, São Paulo')
+activity_5 = Activity.create!(category: 'Bares', user: bebeto, title: 'Metal no Fofinho', initial_date: DateTime.now, final_date: finaldate, location: 'Rua Augusta, 1415, São Paulo')
 Chatroom.create!(activity_id: activity_5.id)
-Exploration.create!(activity_id: activity_5.id, user_id: 6)
+Exploration.create!(activity_id: activity_5.id, user: bebeto)
 
-activity_6 = Activity.create!(category: 'Ao ar livre', user_id: 7, title: 'Correr nu na Paulista', description: 'Bora ficar peladaço na Av. Paulista. Modalidades: 100m rasos, Marcha atlética (minha preferida), Maratona, revezamento 4 x 100 (com troca de bastão hehe)', initial_date: DateTime.now, final_date: finaldate, location: 'Avenida Paulista, 1000, São Paulo')
+activity_6 = Activity.create!(category: 'Ao ar livre', user: lincoln, title: 'Correr nu na Paulista', description: 'Bora ficar peladaço na Av. Paulista. Modalidades: 100m rasos, Marcha atlética (minha preferida), Maratona, revezamento 4 x 100 (com troca de bastão hehe)', initial_date: DateTime.now, final_date: finaldate, location: 'Avenida Paulista, 1000, São Paulo')
 Chatroom.create!(activity_id: activity_6.id)
-Exploration.create!(activity_id: activity_6.id, user_id: 7)
+Exploration.create!(activity_id: activity_6.id, user: lincoln)
 
-activity_7 = Activity.create!(category: 'Outros', user_id: 12, title: 'Brincar com os Peludos', description: 'Só para quem curte um cachorrão peludo hehe', initial_date: DateTime.now, final_date: finaldate, location: 'Rua Augusta, 657, São Paulo')
+activity_7 = Activity.create!(category: 'Outros', user: afonso, title: 'Brincar com os Peludos', description: 'Só para quem curte um cachorrão peludo hehe', initial_date: DateTime.now, final_date: finaldate, location: 'Rua Augusta, 657, São Paulo')
 Chatroom.create!(activity_id: activity_7.id)
-Exploration.create!(activity_id: activity_7.id, user_id: 12)
+Exploration.create!(activity_id: activity_7.id, user: afonso)
 
-activity_8 = Activity.create!(category: 'Esportes', user_id: 9, title: 'Jogão do Curinthia', description: 'Vai, Curinthia!', initial_date: DateTime.now, final_date: finaldate, location: 'Neo Química Arena, São Paulo')
+activity_8 = Activity.create!(category: 'Esportes', user: thiago, title: 'Jogão do Inter', description: 'Vamo inter!', initial_date: DateTime.now, final_date: finaldate, location: 'Estádio Beira Rio, Porto Alegre')
 Chatroom.create!(activity_id: activity_8.id)
-Exploration.create!(activity_id: activity_8.id, user_id: 9)
+Exploration.create!(activity_id: activity_8.id, user: thiago)
 
-activity_9 = Activity.create!(category: 'Compras', user_id: 8, title: 'Comprar Monitor Bacana', description: 'Deu ruim no meu monitor =(', initial_date: DateTime.now, final_date: finaldate, location: 'Miami, Estados Unidos')
+activity_9 = Activity.create!(category: 'Compras', user: miguel, title: 'Comprar Monitor Bacana', description: 'Deu ruim no meu monitor =(', initial_date: DateTime.now, final_date: finaldate, location: 'Miami, Estados Unidos')
 Chatroom.create!(activity_id: activity_9.id)
-Exploration.create!(activity_id: activity_9.id, user_id: 8)
+Exploration.create!(activity_id: activity_9.id, user: miguel)
 
-activity_10 = Activity.create!(category: 'Aventura', user_id: 11, title: 'Rapel Burj Khalifa', description: 'Vida loka, jão!', initial_date: DateTime.now, final_date: finaldate, location: 'Burj Khalifa, EAU')
+activity_10 = Activity.create!(category: 'Aventura', user: carla, title: 'Rapel Burj Khalifa', description: 'Vida loka, jão!', initial_date: DateTime.now, final_date: finaldate, location: 'Burj Khalifa, EAU')
 Chatroom.create!(activity_id: activity_10.id)
-Exploration.create!(activity_id: activity_10.id, user_id: 11)
+Exploration.create!(activity_id: activity_10.id, user: carla)
 
-activity_11 = Activity.create!(category: 'Bares', user_id: 13, title: 'Beber cafezinho de artista', description: 'Coffee shop hehe', initial_date: DateTime.now, final_date: finaldate, location: 'Amsterdam, Holanda')
+activity_11 = Activity.create!(category: 'Bares', user: matheus, title: 'Beber cafezinho de artista', description: 'Coffee shop hehe', initial_date: DateTime.now, final_date: finaldate, location: 'Amsterdam, Holanda')
 Chatroom.create!(activity_id: activity_11.id)
-Exploration.create!(activity_id: activity_11.id, user_id: 13)
+Exploration.create!(activity_id: activity_11.id, user: matheus)
 
-activity_12 = Activity.create!(category: 'Outros', user_id: 6, title: 'Fotografar cães sensuais', description: 'Auau', initial_date: DateTime.now, final_date: finaldate, location: 'Harbin, China')
+activity_12 = Activity.create!(category: 'Outros', user: laranjeira, title: 'Fotografar cães sensuais', description: 'Auau', initial_date: DateTime.now, final_date: finaldate, location: 'Harbin, China')
 Chatroom.create!(activity_id: activity_12.id)
-Exploration.create!(activity_id: activity_12.id, user_id: 6)
-  # test
+Exploration.create!(activity_id: activity_12.id, user: laranjeira)
