@@ -62,21 +62,22 @@
     </h3>
       
     <div class="row text-center">
-      <% @reviews.each do |review| %>
         <div class="col">
           <div class="slider">
+      <% @reviews.each do |review| %>
             <div>
               <blockquote class="blockquote">
                 <p class="mb-0">
                   <%= review.content %>
                 </p>
-                <footer class="blockquote-footer"> <%= review.user.username %> <% review.rating.times do %>
+                <footer class="blockquote-footer"> <%= review.user.username %> 
+                <% review.rating.times do %>
                 <i class="fas fa-star"></i>
                 <% end %>  
                 <% (5 - review.rating).times do %>
                 <i class="far fa-star"></i>
                 <% end  %>
-                </i></cite>
+                
                 </footer>
               </blockquote>
             </div>
@@ -90,6 +91,6 @@
   </div>
 </section>
 
-<%= render "shared/showcarousel" %>
+<%# render "shared/showcarousel" %>
 <%= render "shared/footer" %>
 
