@@ -29,7 +29,7 @@ laranjeira = User.create!(password: '123abc', full_name: 'Laranjeira Bonita', us
 file = URI.open('https://avatars1.githubusercontent.com/u/69615451?v=4')
 laranjeira.photo.attach(io: file, filename: 'laranjeira.jpg', content_type: 'image/jpg')
 
-lincoln = User.create!(password: '123abc', full_name: 'Lincoln Abraham', username: 'Lincoln', about: 'Sou baixista da banda Lifetime Code, adoro codar, sentir o vento batendo em meu corpo nu. Estou aqui para conhecer diversas pessoas e me divertir muito. Manda nudes!' country: 'Brazil', genre: 'male', email: 'lincoln@teste.com')
+lincoln = User.create!(password: '123abc', full_name: 'Lincoln Abraham', username: 'Lincoln', about: 'Sou baixista da banda Lifetime Code, adoro codar, sentir o vento batendo em meu corpo nu. Estou aqui para conhecer diversas pessoas e me divertir muito. Manda nudes!', country: 'Brazil', genre: 'male', email: 'lincoln@teste.com')
 file = URI.open('https://avatars2.githubusercontent.com/u/66792417?v=4')
 lincoln.photo.attach(io: file, filename: 'lincoln.jpg', content_type: 'image/jpg')
 
@@ -64,15 +64,15 @@ fernando.photo.attach(io: file, filename: 'fernando.jpg', content_type: 'image/j
 finaldate = (DateTime.now +99)
 CATEGORIES = ['Ao ar livre', 'Natureza', 'Aventura', 'Cultural', 'Festas', 'Bares', 'Shows', 'Gastronomia', 'Compras', 'Transporte', 'Esportes']
 
-activity_1 = Activity.create!(category: 'Cultural', user_id: 1, title: 'Conhecer o MASP', about: 'Bora conhecer esse museu, curtir uma manhã e tarde inteira lá!', initial_date: DateTime.now, final_date: finaldate, location: 'MASP, São Paulo')
+activity_1 = Activity.create!(category: 'Cultural', user_id: 1, title: 'Conhecer o MASP', description: 'Bora conhecer esse museu, curtir uma manhã e tarde inteira lá!', initial_date: DateTime.now, final_date: finaldate, location: 'MASP, São Paulo')
 Chatroom.create!(activity_id: activity_1.id)
 Exploration.create!(activity_id: activity_1.id, user_id: 1)
 
-activity_2 = Activity.create!(category: 'Festas', user_id: 2, title: 'Party hard', about: 'Vamos curtir todas as festas possíveis em uma noite só, tipo pubcrawl!', initial_date: DateTime.now, final_date: finaldate, location: 'Paris')
+activity_2 = Activity.create!(category: 'Festas', user_id: 2, title: 'Party hard', description: 'Vamos curtir todas as festas possíveis em uma noite só, tipo pubcrawl!', initial_date: DateTime.now, final_date: finaldate, location: 'Paris')
 Chatroom.create!(activity_id: activity_2.id)
 Exploration.create!(activity_id: activity_2.id, user_id: 2)
 
-activity_3 = Activity.create!(category: CATEGORIES.sample, user_id: 3, title: 'Grab a drink', initial_date: DateTime.now, final_date: finaldate, location: 'London')
+activity_3 = Activity.create!(category: 'Outros', user_id: 3, title: 'Grab a drink', initial_date: DateTime.now, final_date: finaldate, location: 'London')
 Chatroom.create!(activity_id: activity_3.id)
 Exploration.create!(activity_id: activity_3.id, user_id: 3)
 
