@@ -7,7 +7,14 @@ class MessagesController < ApplicationController
     if @message.save
       ChatroomChannel.broadcast_to(
         @chatroom,
-        render_to_string(partial: "message", locals: { message: @message })
+        {
+          user_id: current_user.id,
+          name: @message.user.username,
+          message_id: @message.id,
+          time: @message.created_at.strftime("%b %e at %l:%M%p"),
+          photo: @message.user.photo.attached? ? cl_image_path(@message.user.photo.key) : placeholder_url,
+          content: @message.content
+        }
     )
       redirect_to chatroom_path(@chatroom, anchor: "message-#{@message.id}")
     else
@@ -16,6 +23,10 @@ class MessagesController < ApplicationController
   end
 
   private
+
+  def placeholder_url
+    "https://www.dovercourt.org/wp-content/uploads/2019/11/610-6104451_image-placeholder-png-user-profile-placeholder-image-png-286x300.jpg"
+  end
 
   def message_params
     params.require(:message).permit(:content)
