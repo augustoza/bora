@@ -53,9 +53,9 @@ afonso = User.create!(password: '123abc', full_name: 'Afonso Augusto', username:
 file = URI.open('https://avatars2.githubusercontent.com/u/66492757?v=4')
 afonso.photo.attach(io: file, filename: 'afonso.jpg', content_type: 'image/jpg')
 
-fernando = User.create!(password: '123abc', full_name: 'Fernando Beira-mar', about: 'Comandando o meu bora da prisão', username: 'Fernando', country: 'Australia', genre: 'male', email: 'fernando@teste.com')
-file = URI.open('https://avatars3.githubusercontent.com/u/71726856?v=4')
-fernando.photo.attach(io: file, filename: 'fernando.jpg', content_type: 'image/jpg')
+matheus = User.create!(password: '123abc', full_name: 'Matheus Kaiser', about: 'A cerveja que desce quadrada ', username: 'Matheus', country: 'Australia', genre: 'male', email: 'matheus@teste.com')
+file = URI.open('https://avatars1.githubusercontent.com/u/70783827?v=4')
+matheus.photo.attach(io: file, filename: 'matheus.jpg', content_type: 'image/jpg')
 
 thiago = User.create!(password: '123abc', full_name: 'Thiago AV', about: 'Lutador de boxe tailandês', username: 'Thiago', country: 'Thailand', genre: 'male', email: 'thiago@teste.com')
 file = URI.open('https://s1.imghub.io/afoSM.jpg')
