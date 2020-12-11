@@ -1,4 +1,11 @@
 <div class="category multiple-items">
+ <div class="carousel-category">
+    <%= link_to activities_path do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)), url(https://images.unsplash.com/photo-1565293798431-88694aeb9ad0?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1296&q=80)">
+        <p>Todas as categorias</p>
+      </div>
+    <% end %>
+  </div>
   <div class="carousel-category">
     <%= link_to activities_path(:category => "Ao ar livre") do %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)), url(https://images.unsplash.com/photo-1580537782660-2ee130aed8ad?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTg3fHxwYXJrfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60)">
@@ -78,7 +85,7 @@
   </div>
   <div class="carousel-category">
     <%= link_to activities_path(:category => "Outros") do %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)), url(https://images.unsplash.com/photo-1568819107248-c5ebc8b62fad?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80)">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)), url(https://images.unsplash.com/photo-1542567455-cd733f23fbb1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)">
         <p>Outros</p>
       </div>
     <% end %>
