@@ -72,16 +72,43 @@ activity_2 = Activity.create!(category: 'Festas', user_id: 2, title: 'Party hard
 Chatroom.create!(activity_id: activity_2.id)
 Exploration.create!(activity_id: activity_2.id, user_id: 2)
 
-activity_3 = Activity.create!(category: 'Outros', user_id: 3, title: 'Grab a drink', initial_date: DateTime.now, final_date: finaldate, location: 'London')
+activity_3 = Activity.create!(category: 'Shows', user_id: 3, title: 'Suquita Music Festival', description: 'Bora curtir o maior festival de música da cidade de São Paulo. Line up: Lifetime Code, Nicolas Enne, Barões da Pisadinha, Ratos de Porão, MC Bochecha, Calypso, Iron Maiden, Sepultura, Carlinhos Brown, Velhas Virgens, Luísa Sonsa, Jon Bovi, Chitãozinho e Chororó, Racionais MC', initial_date: DateTime.now, final_date: finaldate, location: 'Estádio Morumbi, São Paulo')
 Chatroom.create!(activity_id: activity_3.id)
 Exploration.create!(activity_id: activity_3.id, user_id: 3)
 
-activity_4 = Activity.create!(category: CATEGORIES.sample, user_id: 4, title: 'Explore the area', initial_date: DateTime.now, final_date: finaldate, location: 'Tokyo')
+activity_4 = Activity.create!(category: 'Gastronomia', user_id: 4, title: 'Jantar no Vintão', initial_date: DateTime.now, final_date: finaldate, location: 'Jericó, 193, São Paulo')
 Chatroom.create!(activity_id: activity_4.id)
 Exploration.create!(activity_id: activity_4.id, user_id: 4)
 
-activity_5 = Activity.create!(category: 'Ao ar livre', user_id: 6, title: 'Explorar a Paulista', initial_date: DateTime.now, final_date: finaldate, location: 'Avenida Paulista, 1000, São Paulo')
+activity_5 = Activity.create!(category: 'Bares', user_id: 6, title: 'Metal no Fofinho', initial_date: DateTime.now, final_date: finaldate, location: 'Rua Augusta, 1415, São Paulo')
 Chatroom.create!(activity_id: activity_5.id)
 Exploration.create!(activity_id: activity_5.id, user_id: 6)
 
-# test
+activity_6 = Activity.create!(category: 'Ao ar livre', user_id: 6, title: 'Correr nu na Paulista', description: 'Bora ficar peladaço na Av. Paulista. Modalidades: 100m rasos, Marcha atlética (minha preferida), Maratona, revezamento 4 x 100 (com troca de bastão hehe)', initial_date: DateTime.now, final_date: finaldate, location: 'Avenida Paulista, 1000, São Paulo')
+Chatroom.create!(activity_id: activity_6.id)
+Exploration.create!(activity_id: activity_6.id, user_id: 7)
+
+activity_7 = Activity.create!(category: 'Outros', user_id: 6, title: 'Brincar com os Peludos', description: 'Só para quem curte um cachorrão peludo hehe', initial_date: DateTime.now, final_date: finaldate, location: 'Rua Augusta, 657, São Paulo')
+Chatroom.create!(activity_id: activity_7.id)
+Exploration.create!(activity_id: activity_7.id, user_id: 12)
+
+activity_8 = Activity.create!(category: 'Esportes', user_id: 6, title: 'Jogão do Curinthia', description: 'Vai, Curinthia!', initial_date: DateTime.now, final_date: finaldate, location: 'Neo Química Arena, São Paulo')
+Chatroom.create!(activity_id: activity_8.id)
+Exploration.create!(activity_id: activity_8.id, user_id: 9)
+
+activity_9 = Activity.create!(category: 'Compras', user_id: 6, title: 'Comprar Monitor Bacana', description: 'Deu ruim no meu monitor =(', initial_date: DateTime.now, final_date: finaldate, location: 'Miami, Estados Unidos')
+Chatroom.create!(activity_id: activity_9.id)
+Exploration.create!(activity_id: activity_9.id, user_id: 8)
+
+activity_10 = Activity.create!(category: 'Aventura', user_id: 6, title: 'Rapel Burj Khalifa', description: 'Vida loka, jão!', initial_date: DateTime.now, final_date: finaldate, location: 'Burj Khalifa, EAU')
+Chatroom.create!(activity_id: activity_10.id)
+Exploration.create!(activity_id: activity_10.id, user_id: 11)
+
+activity_11 = Activity.create!(category: 'Bares', user_id: 6, title: 'Beber cafezinho de artista', description: 'Coffee shop hehe', initial_date: DateTime.now, final_date: finaldate, location: 'Amsterdam, Holanda')
+Chatroom.create!(activity_id: activity_11.id)
+Exploration.create!(activity_id: activity_11.id, user_id: 13)
+
+activity_12 = Activity.create!(category: 'Outros', user_id: 6, title: 'Sessão de fotos sensuais de cachorro', description: 'Auau', initial_date: DateTime.now, final_date: finaldate, location: 'Harbin, China')
+Chatroom.create!(activity_id: activity_12.id)
+Exploration.create!(activity_id: activity_12.id, user_id: 6)
+  # test
