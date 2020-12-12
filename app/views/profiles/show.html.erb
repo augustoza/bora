@@ -58,31 +58,39 @@
         <% end %>
       </h3>
       <div class="row text-center">
+
         <div class="col">
           <div class="slider">
             <% @reviews.each do |review| %>
+
               <div>
                 <blockquote class="blockquote">
                   <p class="mb-0">
                     <%= review.content %>
                   </p>
+
                   <footer class="blockquote-footer"> <%= review.user.username %>
                     <% review.rating.times do %>
+
                       <i class="fas fa-star"></i>
                     <% end %>
                     <% (5 - review.rating).times do %>
                       <i class="far fa-star"></i>
                     <% end  %>
+
                   </footer>
                 </blockquote>
               </div>
             <% end %>
+
           </div>
-        </div>
+        <% end %>
       </div>
+
       <%= link_to "Avaliar este usuário", new_profile_review_path(@user), class: "btn btn-outline-warning" %>
     </div>
   </div>
+
 </div>
 </section>
 <%# render "shared/showcarousel" %>
