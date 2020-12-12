@@ -43,48 +43,46 @@
         <% end %>
       </div>
     </div>
-  </section>
-  <section id="testimonials" class="p-4 bg-dark text-white">
-    <div class="container">
-      <h2 class="text-center">Avaliações de <%= @user.username %> </h2>
-      <h4 class="text-center">
-        <% if @average_rating != nil %>
-          <% @average_rating.times do %>
-            <i class="fas fa-star"></i>
-          <% end  %>
-          <% (5 - @average_rating).times do %>
-            <i class="far fa-star"></i>
-          <% end  %>
-        <% end %>
-      </h3>
-      <div class="row text-center">
+  </div>
+</section>
 
+<section id="testimonials" class="p-4 bg-dark text-white">
+  <div class="container">
+    <h2 class="text-center">Avaliações de <%= @user.username %> </h2>
+    <h4 class="text-center"> 
+      <% if @average_rating != nil %>
+      <% @average_rating.times do %>
+        <i class="fas fa-star"></i>
+      <% end  %>
+      <% (5 - @average_rating).times do %>
+        <i class="far fa-star"></i>
+      <% end  %>
+      <% end %>        
+    </h3>
+      
+    <div class="row text-center">
         <div class="col">
           <div class="slider">
-            <% @reviews.each do |review| %>
-
-              <div>
-                <blockquote class="blockquote">
-                  <p class="mb-0">
-                    <%= review.content %>
-                  </p>
-
-                  <footer class="blockquote-footer"> <%= review.user.username %>
-                    <% review.rating.times do %>
-
-                      <i class="fas fa-star"></i>
-                    <% end %>
-                    <% (5 - review.rating).times do %>
-                      <i class="far fa-star"></i>
-                    <% end  %>
-
-                  </footer>
-                </blockquote>
-              </div>
-            <% end %>
-
+      <% @reviews.each do |review| %>
+            <div>
+              <blockquote class="blockquote">
+                <p class="mb-0">
+                  <%= review.content %>
+                </p>
+                <footer class="blockquote-footer"> <%= review.user.username %> 
+                <% review.rating.times do %>
+                <i class="fas fa-star"></i>
+                <% end %>  
+                <% (5 - review.rating).times do %>
+                <i class="far fa-star"></i>
+                <% end  %>
+                
+                </footer>
+              </blockquote>
+            </div>
+      <% end %>
           </div>
-        <% end %>
+        
       </div>
 
       <%= link_to "Avaliar este usuário", new_profile_review_path(@user), class: "btn btn-outline-warning" %>
